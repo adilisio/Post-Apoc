@@ -18,6 +18,7 @@ music, and critical reception. This is study, not imitation — the game we buil
 | `research/audio/` | Score, licensed music, radio, and sound design reference |
 | `research/design-insights/` | Developer talks, postmortems, cut content, design philosophy |
 | `research/community/` | Mods and community fixes — what players changed and why |
+| `research/production/` | How we build it: engines, AI agents and the 3D asset pipeline |
 | `design/` | Our own synthesis: must-haves, never-agains, and the game outline |
 
 ## Status
