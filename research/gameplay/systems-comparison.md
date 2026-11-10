@@ -46,6 +46,17 @@ this session carry `[UNVERIFIED]`. Treat those as "very probably right, check be
   Todd Howard said it "really did not resonate".
 - Reception snapshot (Metacritic PC): FO3 91, FNV 84, FO4 84, FO76 52 at launch (Wastelanders re-review 68).
   Critical score tracks polish at launch; long-term fan esteem tracks reactivity (FNV, FO1/2).
+- V.A.T.S. is a "bridge" mechanic: it lets a stat-driven character fight in a shooter. It went pause + 90%
+  damage reduction (FO3) -> pause + 25% reduction (FNV) -> slow-motion + banked crit meter (FO4) -> real-time aim
+  assist (FO76). The more the real-time half improved, the less the bridge was needed (section 22).
+- Real-time vs. turn-based changes what stats are *for*: turn-based makes AP/Sequence the master stats; real-time
+  makes aim and reflex player-owned, so stats must be re-routed into damage, durability and utility (section 23).
+- Item condition existed only in FO3, FNV and FO76. FO4 removed it for weapons and armor (power armor excepted)
+  and replaced the repair sink with junk-to-components crafting. FO76 then sold repair kits for premium currency
+  (April 2019, patch 8.5) and drew a pay-to-win backlash (section 24).
+- Hard numbers worth remembering: FO1/2 aimed-shot penalties Head -40, Eyes -60, Groin -30, Arms -30, Legs -20;
+  FO3 VATS hit cap 95%, crit +15, player takes 10% damage; FNV VATS player takes 75%; FO4 queue limit 16
+  attacks; FO3 repair cap = 40% + 0.6% x Repair skill.
 
 ---
 
@@ -94,7 +105,7 @@ from general knowledge `[UNVERIFIED]`.
 | Endurance | HP (+2/pt, plus per-level gain); healing rate (EN/3); poison/rad resistance | HP 20/pt; Big Guns, Unarmed skills | HP 20/pt; **implant limit**; Survival, Unarmed | HP 5/pt plus per-level gain; sprint drain | HP 250 + 5/pt; sprint drain; disease resistance |
 | Charisma | NPC reaction; barter prices; **FO2 party size (CH/2)** | Speech and Barter skill base only | Speech/Barter base; **companion "Nerve"** (+5% damage and armor per point) | Persuasion chance; prices; **settlement population (10 + CH)**; Local Leader | Prices; quest reward scaling; **perk sharing with team** |
 | Intelligence | **Skill points/level (5 + 2 × IN)**; dialogue options; IN < 4 gives "dumb" dialogue | Skill points/level (10 + IN); Science, Repair, Medicine | Skill points (10 + IN/2); many dialogue checks | **XP gain (+3%/pt)**; gates Gun Nut, Science!, Hacker | XP bonus (about +2%/pt); crafting quality; hacking |
-| Agility | **Action Points (5 + AG/2)**; Armor Class; gun skills | AP (65 + 2/pt); Small Guns, Sneak | AP (65 + 3/pt); reload and draw speed; Guns, Sneak | AP (60 + 10/pt); sneak; gates Gunslinger, Commando, Sneak | AP 60 + 10/pt; sneak; pistol/auto cards |
+| Agility | **Action Points (5 + AG/2)**; Armor Class; gun skills | AP (65 + 2/pt); Small Guns, Sneak | AP (65 + 3/pt); reload and draw speed; Guns, Sneak | AP (60 + 10/pt); sneak; gates Gunslinger, Commando, Sneak | AP 105 + 10/pt per fallout.wiki (earlier draft said 60 + 10; corrected); sneak; pistol/auto cards |
 | Luck | Crit chance (1%/pt); random events; gambling; jinx outcomes | Crit chance (1%/pt); +0.5 to all skills per point | Crit chance; **casino odds**; all skills | **Critical meter fill rate**; loot perks (Fortune Finder, Scrounger); Idiot Savant | Crit meter recharge; loot condition; luck cards |
 
 ### 1.3 God stats and dump stats
@@ -240,7 +251,7 @@ Reasoning:
 | Hit determination | Dice: skill %, range, light, AC; max 95% | Real-time: hitscan with skill-driven spread. VATS: dice | Real-time: spread from skill, Strength, condition; true iron sights. VATS: dice | Real-time: player aim dominant, stats barely affect accuracy. VATS: dice from Perception | Same as FO4, server-authoritative |
 | Targeted shots | Aimed shots at 8 body regions incl. eyes and groin; accuracy penalty, crit bonus | VATS limbs; no eyes/groin | VATS limbs | VATS limbs; **manual critical meter** | VATS limbs once a card is equipped |
 | Player safety in VATS | n/a | Takes 10% damage while in VATS | Takes 75% damage; melee doubled | Time slowed, not stopped; vulnerable | No slowdown at all |
-| Critical hits | Luck % roll per shot; crit tables with instant-death and knockdown results | Luck % in real time; +15% in VATS `[UNVERIFIED]` | Luck % × weapon crit multiplier | **No random crits outside perks**; meter fills in VATS, player banks and spends | Same meter |
+| Critical hits | Luck % roll per shot; crit tables with instant-death and knockdown results | Luck % in real time; +15 crit chance in VATS (fVATSCriticalChanceBonus = 15, fallout.wiki; FNV's VATS bonus is only 5) | Luck % × weapon crit multiplier | **No random crits outside perks**; meter fills in VATS, player banks and spends | Same meter |
 | Companion control | FO1 none (Ian shoots you in the back); FO2 behaviour panel | Minimal orders | Companion wheel: tactics, range, stance | Point-and-command | none (allies stay in camp) |
 | Signature flavour | Death animations, crit text log, "eyes shot" | Slow-motion kill cam (inspired by Burnout crash replays, per Wikipedia) | Same, more lethal | Gun-feel overhaul, power armor as a vehicle, legendary enemies | Group events, bosses, nukes |
 
@@ -653,6 +664,393 @@ The original vision document's interface goal was "easy to use while still suppo
 
 ---
 
+## 22. V.A.T.S. evolution
+
+Verification key for sections 22-24: figures marked with a fallout.wiki page name were read this session.
+Developer quotes reached only as search-result summaries or headlines are labelled as such. Anything else is
+`[UNVERIFIED]`.
+
+### 22.1 Lineage in one table
+
+| | FO1 / FO2 aimed shots | FO3 V.A.T.S. | FNV V.A.T.S. | FO4 V.A.T.S. | FO76 V.A.T.S. |
+|---|---|---|---|---|---|
+| Time model | Turn-based; the whole game is paused between actions | **Full pause**; cinematic slow-motion kill cam on execution | Same pause | **Slow-motion, not pause** | **Real time, no slowdown**; you can move; enemies can dodge |
+| Targeting | 8 body regions chosen from a menu: head, eyes, torso, groin, arms, legs | Limbs, head, torso (no eyes/groin) | Same; melee and grenades are "full body" only | Same; hit chance shown per part and per target | Off by default for limbs: needs the **Concentrated Fire** perk card; otherwise it auto-targets the body |
+| Cost model | AP; aimed shot costs extra AP | AP pool 65 + 2 x AG, spent per queued shot | AP pool 65 + 3 x AG; unarmed special moves 20 AP | AP pool 60 + 10 x AG, **shared with sprint**, scope breath-hold and jetpack; up to 16 queued attacks | AP pool 105 + 10 x AG (fallout.wiki; Agility starts at 1, so early VATS is rare); in power armor it drains the fusion core (a fresh core equals 2,000 AP) |
+| Hit chance | Dice: skill, range, light, AC, then the region penalty | Capped 95% (fVATSMaxChance); non-linear range falloff (fVATSDistanceFactor 2); spread halved (0.5) | Same family | Capped by Perception-driven percentage; Penetrator shoots through cover | Capped 95%; reduced by distance, visibility, body-part difficulty, range, cone of fire, fire rate and recoil; Perception made more relevant by patch 1.7.21.25 |
+| Crits | Region penalty converts to crit chance (see 22.2) | +15 crit chance in VATS | +5 crit chance in VATS | **No random crit chance**: a meter fills from VATS hits, guaranteed hit when spent | Same meter, spent by a button on the VATS screen |
+| Damage to player while in VATS | n/a (turn-based) | **10%** of normal (fVATSPlayerDamageMult 0.1) | **75%** of normal | Reduced; magnitude `[UNVERIFIED]` | None (real time) |
+| What it was for | The only way to shoot, so a core tactical layer | Bridge: stat-driven hit chance inside a first-person shooter | Optional bridge; iron sights make real-time viable | Resource game layered on a competent shooter | Aim assist with a stat-based hit chance in a shared world |
+
+### 22.2 FO1 / FO2: aimed shots (the ancestor)
+
+- **Region penalties** (default hit modifiers from the Fallout 2 critical-table documentation at fodev.net):
+  Head -40, Eyes -60, Groin -30, each arm -30, each leg -20, Torso 0. An uncalled shot counts as torso.
+- **Crit coupling.** For a normal attack the game rolls against critical chance minus the region modifier. Because
+  the modifiers are negative, an aimed shot gains crit chance equal to the penalty. A harder target is a riskier
+  shot with a higher crit ceiling. That is the whole design in one line: the player buys crit chance with hit chance.
+- **Crit severity roll.** Once a hit is a crit, the game rolls 1-100 and adds the attacker's Better Criticals
+  stat (+20; Heavy Handed subtracts 30). Result tiers: up to 20 = tier 0, 21-45 = 1, 46-70 = 2, 71-90 = 3,
+  91-100 = 4, above 100 = 5. Tables are indexed by target type and hit location.
+- **Crit effects** in the tables: knockout, knockdown, blinding, crippled limb (left/right arm or leg, or random),
+  instant death; extra flags include ignoring armor, dropping the weapon, losing the next turn and setting the
+  target on fire.
+- **AP cost.** The community-patch fo2238 wiki lists an aimed shot at +2 AP for eyes, head or groin and +1 AP for
+  other regions. Original-game values were not confirmed `[UNVERIFIED]`.
+- **Fast Shot** (trait) blocks aimed shots entirely in exchange for cheaper single shots (the official-style wiki
+  lists 1 AP less; the fo2238 wiki lists 1 or 2 less depending on weapon hands). Burst fire cannot aim, so bursts
+  land on the torso and rarely crit (NMA forum thread; whether burst crits roll per bullet or per burst is
+  disputed `[DISPUTED]`).
+- **Dominance.** Aimed shots were optional but were the signature of the strongest builds (sniper-style
+  Perception/Luck characters with Better Criticals and Sniper) while Bonus Rate of Fire/burst builds went the other
+  way and ignored them. A choice of "precision or volume" per weapon is the part VATS inherited.
+- **Reception.** Not a controversy; it was simply how the game worked. Worth noting that the eyes shot, the
+  crit-text log and the death animations are the most remembered flavour of the combat.
+
+### 22.3 FO3: why it was built, and what it cost
+
+Why Bethesda built it:
+
+- Howard's origin story, repeated in several interviews and summarised by PC Gamer and fallout.wiki: Burnout's
+  crash mode "with body parts" ("imagine the car parts are like eyeballs and guts"). He wanted combat that mixed
+  real-time and turn-based and was "cinematic" (Wikipedia, FO3 article). He has also compared the structure to
+  phase-based combat in KOTOR (PC Gamer summary).
+- A slow-motion version was considered, but a full pause was chosen so players could "assess the situation
+  tactically" (fallout.wiki). AI programmer Jean Simonet built the changing slow-motion camera (Wikipedia).
+  Lead artist Istvan Pely told EDGE that the team agonised over whether a low-skill character who misses what it
+  aims at would be satisfying or merely frustrating, spent a long time wondering "is this even fun?" and only
+  just got VATS working shortly before shipping (frvr.com summary of the EDGE interview).
+- Emil Pagliarulo's framing, from interviews (Play.tm repost, Strategy Core 2007, GameTap): Bethesda wanted to
+  honour the original's tactical turn-based roots without forcing an isometric turn-based game on everyone ("not
+  every Fallout fan wants a turn-based isometric game"). The name is a homage to the FEV vats of the original game
+  (fallout.wiki). He also said the studio had not done gun combat since the Terminator games, so shooting itself
+  was a hard problem (GamesRadar). I could not retrieve the full original articles; wording is from summaries
+  `[UNVERIFIED exact quotes]`.
+- Joel Burgess: "We didn't really have first-person shooter experts" (Wikipedia, FO3 article). Developers later
+  judged the shooting a weak point, and Howard has reportedly agreed it is only mediocre as a shooter.
+
+Numbers (fallout.wiki Fallout 3 V.A.T.S. page):
+
+| Item | Value |
+|---|---|
+| Max hit chance | 95% |
+| Crit chance bonus | +15 |
+| Damage taken by player while in VATS | 10% (a 90% reduction) |
+| Spread in VATS | multiplied by 0.5; stealth also halved |
+| Automatic melee damage | doubled |
+| Max engage distance | 5,000 units; melee reach doubled |
+| Weapon wear in VATS | the page says 4x in text and lists a setting of 5 `[DISPUTED]` |
+| Concentrated Fire | +5% accuracy per extra shot at the same part |
+| Cripple effects | head cripple gives the target -4 Perception; crippled arms lower melee damage 5-10% |
+| Perk hooks | Paralyzing Palm (30% of VATS hits), Mysterious Stranger (10% chance, targets under 150 HP) |
+| Limits | you cannot move or dodge; mines show 0% |
+| AP cost per shot | set per weapon; no table retrieved `[UNVERIFIED values]` |
+
+How the real-time half worked (this is what made VATS necessary): in real time the Small Guns skill adds about
+3.5% damage per 5 points with diminishing returns and shrinks projectile spread; scoped weapons have no sway at
+skill 100 (fallout.wiki Small Guns (FO3)). A low-skill character therefore genuinely misses at the crosshair.
+VATS is the escape from that: hit chance is a number, not an aim.
+
+How dominant and how exploitable:
+
+- Dominance: effectively mandatory for low-skill builds and for anything past mid-range; optional for skilled
+  characters with short-range shotguns and melee.
+- The 90% damage reduction is the central exploit: anything inside a VATS sequence is nearly safe, and you can
+  fire, cripple and reset on AP regeneration. Designers describe the net effect as an "I win" button (the
+  analysis in section 6 above).
+- Weapon wear multiplied while in VATS (see the table) is the only built-in cost; see section 24.
+
+Reception:
+
+- Praised as the identity of the game and a clever bridge. 1UP's Demian Linn found VATS enjoyable but the
+  real-time encounters imprecise (Wikipedia summary).
+- Savaged by classic-RPG fans. A CanardPC review quoted by RPG Codex called the VATS slow-motion kill cam ugly,
+  unskippable and so long that players would avoid using the targeted-shot system, and guessed it was padding or
+  face-model showmanship. Codex forum voices called VATS a "gimmicky compromise" and a failure to use basic RPG
+  ideas properly (search summaries of RPG Codex pages).
+- The game it served scored 91 on Metacritic PC at launch (see Quick Reference), so the gimmick did not hurt sales
+  or scores.
+
+### 22.4 FNV: reduced invulnerability, real sights, melee moves
+
+- **Player takes 75% of normal damage** in VATS (fallout.wiki), a 25% reduction instead of FO3's 90%. VATS
+  became a damage-and-accuracy tool rather than a shield. Melee and unarmed damage is still automatically doubled.
+- **VATS crit bonus fell from +15 to +5.**
+- **AP pool** 65 + 3 x Agility (fallout.wiki Action Points): more AP than FO3 per point, spent on each shot.
+- **Special moves.** Any melee weapon unlocks a special attack at Melee Weapons 50; unarmed Uppercut and Stomp at
+  skill 50, Cross at 75. Unarmed specials cost a flat 20 AP. This gave melee builds a real VATS identity instead of
+  a free-for-all.
+- **Real iron sights** and skill/Strength/condition-based spread (existing section 6 table) made the real-time half
+  viable, which is why FNV VATS reads as an option. Mines always show 0%, thrown explosives show 0% on PC (bug,
+  fixed by community patch), and automatic weapons always fire a full burst.
+- **Reception.** The reduced safety window and the 25% number were rarely complained about; the common view in
+  the community is that FNV's gunplay is better balanced than FO3's `[UNVERIFIED, forum consensus, no source
+  retrieved]`. Sawyer's DT work (section 23) did more to restore tactical meaning than VATS changes did.
+
+### 22.5 FO4: slow-motion and the banked critical
+
+- **Slow-motion rather than pause.** The enemy keeps acting, you can still be hurt, and reloads are not slowed
+  (fallout.wiki lists a bug about reload sounds). The slow-down factor and the exact damage reduction were not
+  published on the page I could reach `[UNVERIFIED]`.
+- **AP is shared with sprint** (60 + 10 x Agility). Every VATS use competes with movement, so VATS stops being a
+  free reset button. Power armor with an empty fusion core cannot use VATS at all.
+- **Queue up to 16 attacks.** An automatic weapon's single AP cost covers one burst of about three rounds. Scopes
+  roughly double the AP cost; reflex sights lower it; muzzles do nothing. Quick Hands rank 2 makes reloads free of
+  AP.
+- **The critical meter** (the best idea of the FO3-era VATS): a meter fills from successful VATS hits, and Luck
+  sets how quickly. Spent crits are guaranteed to hit if the displayed chance is above zero and **bypass damage
+  and energy resistance** (fallout.wiki V.A.T.S. page). Hits needed to fill the meter by Luck (fallout.wiki Luck):
+
+| Luck | 1 | 2 | 3 | 4 | 5 | 6-7 | 8-9 | 10-12 | 13-18 | 19-29 | 30-62 | 63+ |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Hits to fill | 14 | 12 | 10 | 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 |
+
+- **Banking.** Critical Banker (Luck 7, ranks at levels 17, 43 and 50) stores 1-4 crits while the meter keeps
+  filling. Four Leaf Clover (Luck 9) gives hits a chance to fill the meter outright. Mysterious Stranger, Grim
+  Reaper's Sprint and Ricochet can also fill it.
+- **Exploits.** A Lucky weapon plus the Isodoped companion perk fills the meter in two shots at Luck 14 (wiki
+  note), and meter-recharge stacking lets high-Luck builds crit nearly every shot. Gun Fu rank 3 guarantees a
+  crit from the fourth target onward. Known glitches: a crouching enemy's body can block headshots, and the camera
+  can freeze when you strafe.
+- **Perk web.** About fifteen perks touch VATS: Iron Fist, Awareness (shows resistances), Concentrated Fire (+10,
+  +15 or +20% accuracy on repeat hits to one part), Penetrator, Sniper (+25% headshot accuracy with scoped
+  non-automatic rifles at rank 3), Action Boy/Girl, Blitz, Gun Fu, Quick Hands, Better Criticals, Critical Banker,
+  Four Leaf Clover, Grim Reaper's Sprint, Mysterious Stranger, Killshot (companion).
+- **Dominance and what it was for.** VATS is optional for most players because the shooter is competent; it is
+  mandatory only for Luck-crit builds, which turn it into a turn-based minigame inside the real-time world. The
+  design intent was "bridge between stats and shooting" less than "reward a banked resource".
+- **Reception.** Players overwhelmingly liked the slow-motion version and the crit meter (including because
+  it replaced FO3's invulnerability). Critics' complaints concentrate on Luck as a god stat and on the
+  resistance bypass making high-DR enemies trivial for VATS builds `[UNVERIFIED, community opinion, no source
+  retrieved]`.
+
+### 22.6 FO76: real-time and card-gated
+
+- Todd Howard told Geoff Keighley at E3 2018 that VATS is real-time with no slowing but still lets you pick
+  targets and body parts (PCGamesN / PC Gamer / GamingBolt coverage, summaries). Reporters tied the change to
+  multiplayer: slowing time for one player would slow it for everyone, which is also hard to do technically in
+  an online game with PvP. I found no direct Howard quote about alternatives `[UNVERIFIED]`.
+- Mechanics: you can move while queued; enemies can dodge; targeting limbs needs the Concentrated Fire card
+  (Shacknews, Prima Games). The crit meter is spent from a button on the screen, and critical damage is **added
+  to** paper damage rather than multiplied, with a base multiplier of usually 2.0 (fallout.wiki FO76 damage).
+- **Why multiplayer forced it:** a shared server cannot honour a pause or a slow-down for one client; any
+  VATS must therefore be an aim assist with hit-chance math, not a time-bending mode.
+- **Dominance:** an essential tool for VATS-stealth and crit builds, optional for the large share of players using
+  automatic weapons manually. The hit-chance changes of patch 1.7.21.25 (recoil and cone of fire matter more,
+  large enemies measured from their outer bounds) show Bethesda retuning it for fairness.
+- **Reception:** PC Gamer's headline on the reveal footage called it "pretty disappointing", and Altchar called
+  it "underwhelming and unfinished" (headlines only); later reviewers described real-time VATS as "out of place".
+  Players kept using it for the build flexibility, not for any tactical pause.
+
+### 22.7 Judgement: what VATS solves, and the alternatives
+
+| Problem | How VATS solves it | Cost | Alternative solutions used elsewhere |
+|---|---|---|---|
+| A stat-based character needs a stat-based chance to hit inside a first-person shooter | Hit chance is a displayed number, not your aim | Breaks pacing; creates a second combat mode; invites invulnerability exploits | **Skill-driven reticle bloom and sway**: Deus Ex (2000) improves accuracy +0, +5%, +12.5%, +25% from untrained to master and reduces recoil and scope sway (Deus Ex wiki). Fallout 3 and 4 both tried versions of this in real time. Pure RPG dice in real time was Mass Effect 1's approach, and its remaster retuned bloom to be more controlled (EA/GameBanshee note) |
+| Player is not a twitch shooter | Pause or slow lets thinking players compete | Turns a shooter into a menu | **Real-time with pause**, **turn-based hybrids** (Fallout Tactics CTB, Wasteland 2/3, Van Buren's planned dual mode), or **auto-aim and cover systems** `[UNVERIFIED for specific games]` |
+| Players want aimed shots and body-part gore | Targeted limbs, cripples, cinematics | Heavy animation budget | **Always-on location damage** that applies to real-time aim (limb damage as in FO4 itself); or **stat-gated headshot multipliers** |
+| Character power must remain visible | You can see the percentage rise with Perception/Agility | Number may be irrelevant if you can aim | **Decouple hit from stats** and let stats scale damage, durability and utility instead (FO4/FO76 direction) |
+| Rewarding mastery | Crit meter turns a hidden roll into a banked, timed resource | Luck becomes god stat | Cooldown-based skill triggers; bonus damage for stat-gated headshots |
+
+Opinion: VATS is the best answer to "character skill vs. player skill" when the studio cannot make the shooting
+good (FO3's case), and the worst answer when it can (FO4, FO76). Its most transferable parts are not the pause but
+(a) a displayed hit chance per target region, (b) a cost in a spendable resource and (c) FO4's banked crit.
+
+---
+
+## 23. Real-time vs. turn-based balance
+
+### 23.1 How each model changes the value of stats and builds
+
+| Axis | FO1 / FO2 (turn-based) | FO3 (real-time + VATS) | FNV | FO4 | FO76 |
+|---|---|---|---|---|---|
+| Master stat | **Agility** (AP = 5 + AG/2) and **Perception** (Sequence decides who acts first) | Intelligence for skill points; Agility for VATS AP (65 + 2 x AG) | Same as FO3 but AP is 65 + 3 x AG | Agility/Luck for VATS crit builds (AP 60 + 10 x AG) | Weapon-class stat via card slots; AP 105 + 10 x AG |
+| What the stat does in the fight | Decides how many actions you get, in what order, with what accuracy | Skills drive spread and sway; stats drive VATS pool | Skills and Strength drive spread; Strength has weapon minimums | Barely touches accuracy; mostly damage perks | Same as FO4 |
+| Companion value | Each companion is a pool of AP that can finish the fight on the turn they act; uncontrollable in FO1 | Meat shield and extra damage; one at a time | Wheel commands; perks | Command cursor; invulnerable essential | None |
+| Encounter design | Hand-built positions and random encounters; combat is a gear check | Level-scaled spawns; you meet whatever the lists produce | Fixed placements with DT-gated threats | Level bands; legendary mutants | Event-based public arenas |
+| Difficulty lever | Enemy stats and your build | HP multipliers and damage multipliers | DT thresholds and enemy placement | Enemy HP scaling and legendary spawns | Server-side balance |
+| Natural dominant build | Burst fire or sniper with Better Criticals | Small Guns/Energy build abusing VATS invulnerability | Guns with AP rounds plus DT-breaking ammo | Luck-crit VATS or rifle build | Whatever the current meta is |
+
+**FO1 / FO2: the AP economy.**
+- Base AP is 5 + Agility/2 (fallout.wiki Action Points). Typical costs from the existing section 6 table: move 1/hex,
+  shoot 4-6, reload 2, inventory 4 (2 in FO2 `[UNVERIFIED]`). One extra AP point therefore is worth roughly
+  one extra hex of movement or a quarter of a shot, which is why Agility is the god stat.
+- **Sequence** (2 x Perception, existing section 1.2) decides who acts first. A fast opponent that hits first can
+  win the fight outright, so Perception and the Kamikaze trait (which trades defence for Sequence) are considered strong for the same
+  reason `[UNVERIFIED: trait numbers not re-checked]`.
+- **Burst fire and crit dominance.** Guides for FO2 list Bonus Rate of Fire, Better Criticals, Sniper, Slayer and
+  Bonus Ranged Damage as standard burst-build perks (Steam/GOG/NMA threads). The NMA community notes that burst
+  shots land on the torso, so burst builds trade crit potential for volume, and that a sniper with Luck 10 and
+  the Sniper perk is described by one reader as a 100% crit chance (disputed `[DISPUTED]`). Fast Shot is mocked in
+  FO2 and defended only for burst/rocket builds.
+- **Effect on difficulty.** Turn-based combat is solvable: more AP, a better first strike, and a good weapon beats
+  most encounters. The challenge comes from setup and resource attrition rather than from execution.
+
+**FO3: skills versus a player who is aiming.**
+- The game spent a character's skill on spread and sway and let the player's own aim also matter. Result: a
+  low-skill character misses at the crosshair even when the cursor is on target. Pely's EDGE remark (22.3) shows the team
+  knew this would "feel frustrating".
+- Small Guns skill adds roughly 3.5% damage per 5 points with diminishing returns. A skill-100 sniper rifle has no sway.
+  By the time skills could be maxed (cap raised to 30), skill stopped mattering.
+- Percentage-only DR (cap 85%) removes the "right weapon for the job" decision; the numbers are on the Pip-Boy but
+  the enemy health bar shows only a percentage, so players cannot see whether armor is working (RPG Codex
+  summary of Sawyer, May 2010).
+
+**FNV: DT versus DR and why Sawyer changed it.**
+- Sawyer announced that damage threshold was returning to the series (RPG Codex, 2 May 2010). Stated problems with
+  FO3: enemy health bars that show only a percentage hide how well armor is working, whereas FO1/FO2 numbers made
+  it clear. FNV added a shield icon that shows when a hit does no more than the target's threshold.
+- Rationale in his own words, as relayed by search summaries: a small percentage of damage can still get through
+  the thickest armor, but a threshold can neutralise small arms. That is the tactical value: small-damage weapons
+  stop working against heavy armor, which creates weapon-class roles.
+- Formula (section 7): `afterDR = damage x (100 - min(DR, 85))/100`, then `final = max(afterDR - DT, damage x 0.2)`.
+  The 20% floor stops DT from becoming a dead end.
+- Sawyer says his balance work was "mostly vibes", using a weapons spreadsheet by ammo type and base damage for
+  maybe a couple of months and then playtesting by feel (PC Gamer / GamesRadar headlines). He also said he
+  wanted FNV to be harder than FO3 or Skyrim without just raising numbers (PC Gamer summary). A forum claim that he
+  considered BB guns damaging power armor deliberate is unverified `[UNVERIFIED]`.
+
+**FO4: bullet sponges and level scaling.**
+- Enemies' health scales inside zone bands, and legendary enemies add mutation and healing. Steam and Nexus
+  Mods threads repeatedly call this a bullet-sponge design ("7-8 headshots with a sniper to kill a super mutant,
+  double or triple that for a legendary") and argue the legendary mutation heal is pointless on Survival
+  (community forum quotes; no critic piece retrieved).
+- Counter-argument players give: durability cuts both ways, since enemies that die in one shot also mean you die
+  in one shot; Survival mode reportedly increases your damage to compensate for the sponginess `[UNVERIFIED]`.
+- Mods such as SCOURGE plus True Damage exist to rebalance this.
+
+**FO76: server-side balance and damage metas.**
+- A shared economy and PvP force Bethesda to retune numbers on live servers. Damage bonuses became mostly additive
+  after One Wasteland (Sept 2020); the resistance multiplier is clamped between 0.1 and 0.99; ranged damage
+  falls to 0.5x at 200% of range (fallout.wiki FO76 damage page).
+- **Bloodied** adds 1.37% damage per 1% missing health: 0% at full health, 68.42% at 50% and 130% at 5% (fallout.wiki
+  Bloodied). Builds stack it with low-health perks and VATS stealth crits.
+- Nerf history seen in coverage: Patch 5 nerfed the explosive shotgun and other legendaries (Newsweek); players
+  reported unlisted "stealth" nerfs in December 2018, including reduced enemy XP and production (MP1st, mein-mmo);
+  Patch 6 nerfed Scorchbeasts (mein-mmo); PC Gamer reported another Atlantic City weapon nerfed with
+  compensating buffs. Users report bloodied/VATS builds halved by Gleaming Depths-era changes (Steam, anecdotal)
+  `[UNVERIFIED]`.
+- Pattern: each nerf punishes whoever followed the meta, so balance becomes a recurring community fight.
+
+### 23.2 The argument and the counter-argument
+
+| | Classic-fan position (NMA, RPG Codex) | Counter-position |
+|---|---|---|
+| Core claim | Fallout *is* a turn-based tactical RPG; real-time with VATS is a gimmick that wastes the stat system | Fallout was always a mix: a real-time exploring RPG that switches to turn-based combat; Bethesda wants both audiences |
+| Evidence cited | RPG Codex called VATS "a gimmicky compromise" and a failure to capitalise on basic RPG concepts; CanardPC mocked the slow-motion kill cam | Pagliarulo: "not every Fallout fan wants a turn-based isometric game"; VATS is the nod to tactical players |
+| Strength of argument | Skills mean little when aim decides hits (FO4); characters converge | Turn-based combat costs animation and AI budget, and sells to a smaller audience; FO3 scored 91 and FO4 84 on Metacritic PC |
+| Weakness | Dismisses many players who prefer real-time | Real-time versions repeatedly removed stat identity |
+| Truth in between | Stat expression requires a mechanism that translates stats into outcomes | The mechanism does not have to be turns |
+
+### 23.3 Hybrid models and their reception
+
+| Model | Game | Detail | Reception |
+|---|---|---|---|
+| Continuous turn-based plus real-time | Fallout Tactics (2001) | Three modes: Continuous Turn-Based (everyone acts at once, AP regenerates with Agility), Individual Turn-Based, Squad Turn-Based; sentry modes. Combat planned as strict turn-based; the real-time at E3 2000 was faked; developers redesigned for real-time after the turn-based mode was not fun (fallout.wiki) | Metacritic 82; GameSpy 89, IGN/GameSpot 8.3; praised combat, criticised for linearity and combat-focus; enemy AI mostly reacts only after you shoot; later called "the black sheep of the series" (PCGamesN via Wikipedia) |
+| Real-time with pause | Baldur's Gate, Pillars-style RPGs | Pause-and-queue orders `[UNVERIFIED, no source retrieved]` | n/a |
+| Turn-based party | Wasteland 2 (2014) and Wasteland 3 (2020) | Turn-based, squad, tactical; Wasteland 2 Director's Cut added Precision Strike (target body parts to cripple or stun, or shatter armor) | WL2: Metacritic PC 81, Director's Cut 87, PC World GOTY 2014; Kickstarter $2.93M against a $900k goal. WL3: Metacritic PC 85, 2M+ players by Dec 2021 |
+| Dual mode (unreleased) | Van Buren (cancelled Dec 2003) | Planned player choice between real-time and turn-based combat, "somewhat like VATS" (Giant Bomb, Wikipedia). Sawyer took over as lead designer and resigned; the project was cancelled | None; design remains a fan topic `[UNVERIFIED claims of engine completion]` |
+| Pause hybrid | FO3 / FNV VATS | See section 22 | Hit with the mainstream, divisive with the fans |
+
+Take-aways: the best-reviewed turn-based Fallout-adjacent entries (Wasteland 2, 3) show demand for classic combat;
+Fallout Tactics shows that a continuous turn-based mode can work mechanically but is fragile in tone and AI;
+Van Buren shows the mixed mode never shipped, so there is no market evidence for it.
+
+---
+
+## 24. Durability and repair
+
+### 24.1 Per-game table
+
+| | FO1 / FO2 | FO3 | FNV | FO4 | FO76 |
+|---|---|---|---|---|---|
+| Item condition exists? | No (ammo is the attrition resource) | Yes, weapons and armor, 0-100% | Yes, weapons and armor | **Removed** for weapons and armor; power armor pieces still have condition | Yes, durability bars, 0% = broken |
+| Effect on damage | n/a | Weapons lose damage and accuracy; jam more often. One fan wiki gives 100% damage at full condition falling linearly to 66% at 0 for firearms, another gives full damage at 75% falling to half at 0 (sources conflict `[DISPUTED]`) | Full damage and DT at 75-100%; each point below 75 removes 0.67% of damage/DT (Game8); the GECK spread-from-condition setting is unused | n/a | **None**: weapons deal the same damage at any condition above broken (fallout.wiki) |
+| Effect on spread / rate of fire | n/a | Condition spread can be restored by GECK setting; rate of fire falls about 2% per 10% condition (fan wiki, mixed FO3/NV) `[UNVERIFIED]` | No spread effect in vanilla | n/a | None |
+| Jam chance | n/a | Reload jam chance by condition band (GECK defaults): 100% in 0-10%, 75% in 10-20%, 50% in 20-30%, 25% in 30-40%, 10% in 40-50%, 0 from 50%; firing jam defaults are 0 | Jams below 75% condition (Game8); no chance table retrieved | n/a | n/a |
+| Effect on DR / DT | n/a | Armor DR falls | DT falls 0.67% per point below 75 | n/a | Broken armor stays equipped but gives no resistance |
+| Effect on value | n/a | Yes | Yes | n/a | Yes: value falls to zero at broken; above 100% adds nothing |
+| Degradation rate | n/a | Documented figures conflict: "3% of base weapon damage per shot" for Small Guns vs. 0.2 HP per shot (Chinese wiki mirror) `[DISPUTED]`; **VATS multiplies wear by 4-5x** | VATS adds no extra wear | n/a | Weapons: about 0.25-1% per hit on a target; armor: scaled by health damage you take (fallout.wiki, estimate) |
+| Repair method | n/a (Repair skill fixes robots and machinery, not gear) | Like-for-like cannibalising, merchant repair, Gun Nut/Mr. Fixit perks | Combine duplicates, vendors, Weapon Repair Kits, Jury Rigging | Power armor station; armor frames not scrapped | Workbench with junk components; Basic/Improved Repair Kits |
+| Repair skill link | n/a | Max condition = 40% + 0.6% x Repair (every 5 points adds 3%); duplicates formula below | **Repaired to 100% regardless of skill**; skill sets the efficiency of duplicate repairs | n/a (perk gated mods instead) | Perk cards; over-repair `[UNVERIFIED perk names]` |
+| Merchant repair | n/a | Capped by merchant's own Repair skill, e.g. Crazy Wolfgang 15-50-75, Somah 100 | Each NPC has a max repair (58% for Dale Barton up to 100%); cost = 2 x (value at max capped condition - value now) | n/a | None (use workbench) |
+| Repair consumables | n/a | None as such | **Weapon Repair Kit**: +10/15/20/25/30% by Repair 0-24/25-49/50-74/75-99/100; crafted at a workbench at Repair 50 from scrap metal x2, scrap electronics, wrench, Wonderglue, duct tape; value 20 caps. No armor kits | n/a | Basic: restore one item to 100%. Improved: buff to 150%; rare Scorchbeast Queen drop. Neither can be crafted, sold or traded |
+
+FO3 duplicate-repair formula (fallout.wiki Repair (Fallout 3)): `result = 5% + higher item's condition + 0.05 x lower
+item's condition + 0.15 points x Repair skill`, capped by your maximum. Example: repairing a 20% minigun with a 10% one
+gives 27% at Repair 10 and 33% at Repair 50. So the duplicate is a minor ingredient; Repair skill is the main driver.
+FO3 homemade weapons also depend on Repair: one schematic builds at 75% of your Repair skill, two at 100% and
+three at 125% (capped at 100% condition). FNV keeps the same duplicate formula with a fixed 100% cap and adds
+Jury Rigging (Repair 90, level 14 per Game8), which lets any similar gun repair another of the same category
+(for example a .357 revolver for a .44), and lets common versions repair unique weapons at the risk of destroying
+the unique.
+
+### 24.2 FO76: kits, cash and controversy
+
+- Patch 8.5 notes (Bethesda, 23 April 2019): Basic Repair Kits restore one item in inventory or stash to 100% and
+  require no components; they cannot be crafted, dropped, sold or traded; you buy them in the Atomic Shop (premium
+  currency, which can also be earned from challenges). Improved Repair Kits buff one item to 150% and drop only
+  from the Scorchbeast Queen.
+- Backlash: players saw this as pay-to-win because Atomic Shop items had been promised as cosmetic only (Pete Hines
+  had said so; PC Gamer, PCGamesN, TheGamer, SlashGear, HotHardware, GameRevolution coverage). The worry was PvP
+  advantage, and the broader worry that a monetised repair kit rewards Bethesda for leaving durability irritating.
+  Bethesda's reply: it remains committed to no competitive advantage in the shop, and would adjust the kits
+  according to feedback (PC Gamer summary). A Steam reply claims basic kits were in the shop earlier; treat that as
+  unverified.
+- Mechanics context: condition in FO76 affects value and broken-state only (fallout.wiki), so the kit removes the
+  nuisance of breakage, not a power loss. Armor repair triggers on damage taken, weapons on hits landed.
+- Over-repair: a Steam forum post lists perk cards that allow more than 100% condition (Fix It Good, White Knight,
+  Weapon Artisan) `[UNVERIFIED perk names and numbers]`.
+
+### 24.3 Why FO4 removed it, and what replaced it
+
+- **No official reason found.** In 2015 PC Gamer asked about a rumoured new repair system and Pete Hines relayed
+  that Todd Howard would not go into details yet (PC Gamer). Fan speculation holds that it was cut. Bethesda's
+  Skyrim also has no weapon degradation `[UNVERIFIED general knowledge]`, so the FO4 design follows that lineage.
+- **Inference (analysis, not a statement):** FO4's weapon mod system and junk crafting needed the loot economy
+  to point at components rather than duplicates; condition would have competed with mod tiers as an upgrade axis;
+  and the shooter pace of FO4 leaves little room for a hold-repair loop.
+- **What replaced it as a sink:** junk to components (adhesive, screws, aluminium), weapon and armor mod tables,
+  power armor stations and fusion cores. Power armor kept a limited form of condition plus fuel (the core drains
+  with time and AP use).
+- **Reaction.** Gamesas and Steam threads show complaints ("upset no armor and weapons degradation in Fallout 4")
+  and a trail of mods that restore degradation. Reviewers did not make it a headline issue
+  `[UNVERIFIED, no review piece retrieved]`.
+- **FO3 reaction.** Condition and the duplicate-gun system were widely used and were part of the economy, but I
+  retrieved no critic piece that evaluates them `[UNVERIFIED]`. FNV's repair kits are generally liked as an
+  emergency fix, and a Steam complaint about 10,000 caps to repair a half-broken tesla cannon shows vendor repair
+  scaled to value `[UNVERIFIED anecdote]`.
+
+### 24.4 Economy role
+
+| Role | FO3 | FNV | FO4 | FO76 |
+|---|---|---|---|---|
+| Caps sink | Merchant repair (capped by merchant skill) | Repair costs scale with item value: 2 x (value at cap - value now), so high-end gear is the real sink | None for gear | Repair costs scrap and components, plus premium kits |
+| Reason to pick up duplicate guns | Yes: duplicates are repair ingredients and the main reason to loot common weapons | Yes: duplicates repair; Jury Rigging adds "similar gun" repair | No: weapons are mod platforms; junk is the reason to loot | Weak: scrip, legendary rolls |
+| Skill/perk investment | Repair 40% + 0.6%/pt cap; Gun Nut | Repair skill; Jury Rigging at Repair 90 | Armorer, Gun Nut gate mods | Cards |
+| Effect on loot | Every weapon is potentially a repair part | Same | Every junk item is a component | Mixed |
+
+### 24.5 Judgement: decision or chore
+
+| Condition is a good decision when | Condition is a chore when |
+|---|---|
+| Wear is visible and predictable (a bar you can read) | Wear is constant, invisible or random until a sudden break |
+| It costs something you were going to spend anyway (caps, ammo, time) and the payoff is clear (FNV's DT/damage scaling) | Repair is a pause-menu errand with no trade-off |
+| There is a substitution path (duplicates, kits, vendors) so the player chooses cost vs. convenience | The only path is a cash-shop item (FO76 kits) |
+| It makes you choose between tools (a worn favourite vs. a spare; VATS costs extra wear in FO3) | Everything is cheap to fix, so nothing is at stake |
+| Penalties are soft (damage falloff, jams below a threshold) | Penalties are hard (broken item cannot be equipped) at the worst moment |
+
+Opinion: durability is worth it only when it turns *loot* into *maintenance choices*. FNV came closest: soft
+penalties below 75%, several repair paths of different cost, vendor prices tied to item value and a kit as a
+safety valve. FO3's duplicate-parts system was the best loot-recycling idea but its numbers (VATS wear, jam
+bands) were unreadable. FO4 replaced condition with crafting, which is a better loot sink but removed the reason to
+love a battered old gun. For a new game: soft thresholds, visible condition, a free repair path that costs time or
+components, a paid path inside the world (vendors, perks) and never a real-money shortcut. Breath of the Wild's
+weapon-durability debate (Unwinnable, TheGamer, GamesRadar, Zelda Dungeon) shows the same split: it works when
+breakage drives improvisation and fails when it removes attachment.
+
+---
+
 ## Design Takeaways
 
 Character and progression
@@ -715,6 +1113,38 @@ World, loot and economy
 - **Invest in a diegetic interface for identity, and separately make the lists good** (search, sort, compare).
   Fallout proved the first half and never delivered the second.
 
+Real-time vs. turn-based, targeting and durability (sections 22-24)
+
+- **Decide the combat model before the stat system.** Turn-based makes AP and initiative the master stats;
+  real-time makes aim the player's, so stats must be routed into damage, durability, utility and hit chance
+  *displays*. Do not ship a real-time shooter whose stats only do what the player's hands already do (FO4).
+- **If skill must matter in real time, make it a visible, bounded input** (Deus Ex-style reticle bloom that
+  shrinks with skill, with a floor so low-skill players can still hit) rather than letting a skill-0 character
+  miss a centred crosshair (FO3's complaint from its own lead artist).
+- **Aimed shots are worth keeping, but price them in risk, not just AP.** FO1/2's "harder region, higher crit"
+  coupling (Eyes -60, crit chance rises by the same amount) is the cleanest version.
+- **If you build a targeting-assist mode, never make it invulnerable.** FO3's 90% damage reduction made it a
+  win button; FNV's 25% and FO4's AP-sharing show the pressure valves. Banked, timed resources (FO4's critical
+  meter, Luck-driven) beat a pause.
+- **A hybrid combat mode that exists only for stat expression will always be criticised by both camps.** If the
+  project wants a pause-style tactical mode, build it as a full second interface (queued orders, cover, AP), not
+  a gimmick on top of a shooter, and let the player choose per fight (Van Buren's unreleased dual mode is the
+  design to study; Fallout Tactics' continuous turn-based is the shipped precedent and was well scored but
+  stylistically divisive).
+- **Armor models should make weapon choice tactical and visible.** FNV's DT-with-floor, shield icons when a hit
+  is blocked, and numbers instead of percentage-only bars solved FO3's "armor is invisible" problem.
+- **Do not let balance depend on live-service nerfs.** FO76 shows each balance patch punishing the build
+  players picked last month. Choose scaling rules (additive vs. multiplicative, clamped resistances) up front
+  and keep damage-stacking stats few.
+- **Durability must be a decision, not a ritual.** Use soft thresholds (FNV's 75%), several repair paths of
+  different cost (duplicates, vendors, kits), prices tied to item value, and visible condition. Hard breakage
+  at the wrong moment is a chore.
+- **Never sell a real-money shortcut around a friction you designed.** FO76's repair-kit backlash (April 2019,
+  patch 8.5) is the cautionary tale; the friction was the product.
+- **If you remove durability, replace the sink.** FO4's junk-to-components worked as a loot loop but killed the
+  attachment to a battered favourite gun; give the player some other reason to keep and maintain a signature
+  weapon.
+
 ## Sources
 
 Consulted this session (fetched, or search-result summaries used):
@@ -750,6 +1180,40 @@ Consulted this session (fetched, or search-result summaries used):
 - The Mary Sue, "Breaking Fallout 4 With Pacifism" (search summary): https://www.themarysue.com/breaking-fallout-with-pacifism/
 - Wikipedia: https://en.wikipedia.org/wiki/Fallout_3 , https://en.wikipedia.org/wiki/Fallout:_New_Vegas , https://en.wikipedia.org/wiki/Fallout_4 , https://en.wikipedia.org/wiki/Fallout_76
 
-Not reachable this session (attempted): Nukapedia "Fallout 76 combat" (HTTP 402), fallout.wiki FNV reputation
+Added for sections 22-24 (fetched unless marked as search summary):
+
+- fallout.wiki, V.A.T.S. overview and per-game pages (FO3, FNV, FO4, FO76): https://fallout.wiki/wiki/V.A.T.S. , https://fallout.wiki/wiki/Fallout_3_V.A.T.S. , https://fallout.wiki/wiki/Fallout:_New_Vegas_V.A.T.S. , https://fallout.wiki/wiki/Fallout_4_V.A.T.S. , https://fallout.wiki/wiki/Fallout_76_V.A.T.S.
+- fallout.wiki, Luck (Fallout 4): https://fallout.wiki/wiki/Luck_(Fallout_4)
+- fallout.wiki, Action Points and Sequence: https://fallout.wiki/wiki/Action_Points , https://fallout.wiki/wiki/Sequence
+- fallout.wiki, Small Guns (Fallout 3): https://fallout.wiki/wiki/Small_Guns_(Fallout_3)
+- fodev.net, Fallout 2 critical hit tables: https://fodev.net/files/fo2/criticals.html
+- fo2238 / Fallout wiki search summaries on aimed-shot AP and Fast Shot: https://fo2238.fodev.net/wiki/Fast_Shot , https://fallout.wiki/wiki/Fast_Shot_(Fallout_Tactics)
+- NMA / GOG / Steam burst and crit build threads (search summaries): https://nma-fallout.com/threads/critical-hits.178020/page-2 , https://nma-fallout.com/goto/post?id=4469963
+- PC Gamer, Burnout origin of VATS (headline only): https://www.pcgamer.com/games/fallout/the-fallout-vats-system-was-inspired-by-burnouts-crash-mode-of-all-things-or-as-todd-howard-puts-it-imagine-the-car-parts-are-like-eyeballs-and-guts
+- GamesRadar, VATS compensating for shooting (headline only): https://www.gamesradar.com/games/fallout/fallout-3s-vats-system-helped-compensate-for-bethesdas-lack-of-shooting-chops-we-were-never-going-to-create-gun-combat-that-was-on-par-with-call-of-duty-or-battlefield
+- frvr.com summary of Istvan Pely's EDGE remarks: https://frvr.com/blog/news/fallout-3-devs-wondered-if-vats-was-even-fun-during-development-as-bethesda-wondered-if-its-gunplay-felt-good-or-just-frustrating
+- Pagliarulo interviews (search summaries): https://www.strategycore.co.uk/articles/interviews/fallout-3-interview/ , https://rpgcodex.net/article.php?id=4937 , https://rpgcodex.net/article.php?id=4983
+- RPG Codex, "VATS slow motion may be the worst crime against video gaming": https://rpgcodex.net/article.php?id=5659
+- RPG Codex, Sawyer on damage threshold (May 2010): https://rpgcodex.net/article.php?id=6694
+- PC Gamer / GamesRadar, Sawyer on "vibes-based" weapon balance (headline and search summaries): https://www.pcgamer.com/games/fallout/fallout-new-vegas-director-reveals-that-game-balance-is-mostly-vibes-based-says-he-only-used-a-weapons-spreadsheet-for-maybe-a-couple-of-months
+- PC Gamer, FO76 real-time VATS (headline only): https://pcgamer.com/fallout-76-will-have-real-time-vats ; PC Gamer FO76 VATS footage: https://www.pcgamer.com/fallout-76-vats/
+- Shacknews / Prima, how to use VATS in FO76 (search summary): https://shacknews.com/article/108601/how-to-use-vats-in-fallout-76
+- Altchar, GamingBolt, PCGamesN FO76 VATS coverage (search summaries): https://www.altchar.com/game-news/fallout-76-vats-system-seems-to-be-underwhelming-a0mlZ3h1n0do , https://gamingbolt.com/fallout-76-will-have-real-time-vats-non-human-npcs-and-a-world-filled-with-things
+- fallout.wiki, Fallout 76 damage; Bloodied (Fallout 76); Durability (Fallout 76): https://fallout.wiki/wiki/Fallout_76_damage , https://fallout.wiki/wiki/Bloodied_(Fallout_76) , https://fallout.wiki/wiki/Durability_(Fallout_76)
+- Bethesda, Fallout 76 Wild Appalachia patch 8.5 notes (23 April 2019): https://fallout.bethesda.net/en-US/news/fallout-76-wild-appalachia-patch-8-5-notes-april-23-2019
+- FO76 repair-kit controversy coverage (search summaries): https://www.pcgamer.com/fallout-76-fans-are-unhappy-that-bethesda-is-adding-pay-to-win-items , https://www.thegamer.com/fallout-76-repair-kit-fiasco-explained/ , https://hothardware.com/news/fallout-76-repair-kits
+- FO76 balance and nerf coverage (search summaries): https://www.newsweek.com/entertainment/video-games/fallout-76-update-patch-notes-legendary-shotgun-weapons-nerf-carry-weight-1311507 , https://mp1st.com/news/fallout-76-stealth-nerfs-discovered-in-latest-patch-includes-reduced-enemy-xp-production-nerf-more , https://mein-mmo.de/fallout-76-patch-notes-nerfs-kritik/
+- fallout.wiki, Repair (Fallout 3), Repair (Fallout: New Vegas), Fallout 3 crafting, Weapon Repair Kit: https://fallout.wiki/wiki/Repair_(Fallout_3) , https://fallout.wiki/wiki/Repair_(Fallout:_New_Vegas) , https://fallout.wiki/wiki/Fallout_3_crafting , https://fallout.wiki/wiki/Weapon_Repair_Kit
+- Game8, Fallout: New Vegas repair and condition thresholds: https://game8.co/games/Fallout-New-Vegas/archives/454068
+- GECK wiki, weapon condition jam settings (search summaries): https://geck.uesp.net/wiki/FWeaponConditionReloadJamXX , https://geck.uesp.net/wiki/FWeaponConditionJam
+- PC Gamer, FO4 repair system deferral (search summary): https://www.pcgamer.com/fallout-4-might-have-a-new-repair-system-but-bethesda-isnt-ready-to-talk-about-it
+- Gamesas forum, FO4 durability complaints (search summary): https://www.gamesas.com/upset-armor-and-weapons-degradation-fallout-t390274.html
+- Steam / Nexus / Gamesas threads on FO4 bullet sponges and legendaries (search summaries): https://forums.nexusmods.com/topic/3562725-legendary-stuff-my-main-problem-with-fallout-4 , https://www.gamesas.com/don-you-hate-bullet-sponging-t390429-25.html
+- Wikipedia: https://en.wikipedia.org/wiki/Fallout_Tactics:_Brotherhood_of_Steel , https://en.wikipedia.org/wiki/Wasteland_2 , https://en.wikipedia.org/wiki/Wasteland_3 , https://en.wikipedia.org/wiki/Van_Buren_(video_game)
+- fallout.wiki, Fallout Tactics: https://fallout.wiki/wiki/Fallout_Tactics:_Brotherhood_of_Steel
+- Deus Ex wiki, weapons and skills (search summary): https://deusex.fandom.com/wiki/Weapons_(DX) ; Mass Effect Legendary Edition accuracy notes: https://www.gamebanshee.com/a9ywr
+- Breath of the Wild durability debate (search summaries): https://unwinnable.com/2017/04/27/weapon-durability-in-breath-of-the-wild/ , https://www.thegamer.com/weapon-durability-in-breath-of-the-wild-is-good-and-im-tired-of-pretending-its-not/ , https://www.gamesradar.com/zelda-breath-of-the-wild-broke-the-mould-and-me-by-breaking-its-weapons
+
+Not reachable this session (attempted): fallout.wiki pages for Aimed shot and Fallout 3 item condition (404), CanardPC/TechRadar/Windows Central/AOL full text (truncated or 404), breezewiki mirror (bot block), GECK Gun Spread Formula (403); Nukapedia "Fallout 76 combat" (HTTP 402), fallout.wiki FNV reputation
 page (404), a Tim Cain video-summary wiki (login wall). Josh Sawyer's GDC 2012 talk
 (https://gdcvault.com/play/1015758/Do-(Say)-The-Right-Thing) was identified but not viewed.
