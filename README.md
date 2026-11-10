@@ -31,4 +31,6 @@ Research is complete (39 documents under `research/`) and the first synthesis pa
 | `design/game-concept-outline.md` | Design specification for our own game (working title *Above the Line*), v0.2, audited against the matrix |
 | `design/still-review.md` | Twelve-lens critique of the core mechanic (the still) and what it changed in v0.2 |
 
-No engine code yet; the outline's section 16 lists the open questions for the next phase.
+Engine: Godot 4.7. All assets are made by our own agents. `art-test/` holds two look tests built entirely by code
+(a market scene; a rigged, walking hero character and animal). No game code yet; the outline's section 16 lists
+the open questions for the next phase.
