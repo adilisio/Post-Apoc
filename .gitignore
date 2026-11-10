@@ -1,0 +1,7 @@
+research/art/_local/
+*.mp3
+*.ogg
+*.wav
+*.flac
+.DS_Store
+Thumbs.db
