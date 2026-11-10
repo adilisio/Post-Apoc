@@ -1,6 +1,6 @@
 # Post-Apoc
 
-An original post-apocalyptic game, currently in the **research phase**.
+An original post-apocalyptic game, research complete, now in **concept design**.
 
 Phase 1 is a deep study of the Fallout series (1, 2, 3, 4, New Vegas, 76): lore, gameplay, balance, art,
 music, and critical reception. This is study, not imitation — the game we build will be its own world.
@@ -19,3 +19,14 @@ music, and critical reception. This is study, not imitation — the game we buil
 | `research/design-insights/` | Developer talks, postmortems, cut content, design philosophy |
 | `research/community/` | Mods and community fixes — what players changed and why |
 | `design/` | Our own synthesis: must-haves, never-agains, and the game outline |
+
+## Status
+
+Research is complete (39 documents under `research/`) and the first synthesis pass is written:
+
+| Document | What it is |
+|---|---|
+| `design/post-mortem-matrix.md` | The acceptance checklist: must-haves (`MH-xx`), never-do-agains (`NDA-xx`) and contested questions (`CM-xx`), each with evidence from the research |
+| `design/game-concept-outline.md` | First design specification for our own game (working title *Above the Line*), audited against the matrix |
+
+No engine code yet; the outline's section 16 lists the open questions for the next phase.
