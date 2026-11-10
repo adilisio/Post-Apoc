@@ -1739,6 +1739,9 @@ a stated deliverable or measurement is still owed. **Open** = needs detail befor
 
 ## 16. Open questions for the next phase
 
+**Confirmed by the owner, 10 Nov 2026:** the premise (Section 2) and turn-based combat on the fixed overhead camera
+(Sections 1 and 8) stand as written.
+
 1. ~~Name the tone owner~~ (MH-25). **Resolved 10 Nov 2026:** the project owner sets tone. The tone bible is
    still owed.
 2. **Still prototype:** is a 0.5 m layer grid with end-of-round flow readable to players who have never seen it? What
