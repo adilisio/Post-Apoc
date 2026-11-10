@@ -1,6 +1,7 @@
 # Above the Line: Game Concept Outline
 
-*Working title.* Version 0.1, 10 Nov 2026. First unified design document for our original post-apocalyptic RPG.
+*Working title.* Version 0.2, 10 Nov 2026. (0.2 revises the still after the twelve-lens review in
+`design/still-review.md` and records the owner's decisions of the same day.) First unified design document for our original post-apocalyptic RPG.
 It is audited against `design/post-mortem-matrix.md` (v1). IDs in brackets (MH-xx, NDA-xx, CM-xx) mark the
 checklist items that a decision satisfies or resolves. Section 15 is the full audit. Numbers marked *provisional*
 are concrete enough to prototype on paper and will be retuned from the vertical slice. Nothing in this document
@@ -74,10 +75,12 @@ Above the storage fields the Keeping built **Lift Towns**: concrete service core
 and plug-in housing capsules, raised twelve metres above ground so the land beneath could be "given back" as
 wetland reserve. The two programmes were one idea: put the problem below, live above, let the ground heal.
 
-Then injection pressure triggered a swarm of small earthquakes under the Wend Basin's Crown. The caprock cracked.
+Then the Keeping, behind on its quotas, pumped the Wend Basin's Crown past its licensed pressure. A swarm of small
+earthquakes followed, the caprock cracked, and old wells that nobody had mapped gave way.
 Gas came up through old wells, faults and mine shafts. Carbon dioxide is half again as heavy as air: on calm
 nights it ran downhill like water and pooled in every hollow, street and cellar. On the **First Still** a
-winter night with no wind, it drowned the lowland towns of the Wend in their beds. Releases continued for three
+winter night with no wind, it came up in a single surge and drowned the lowland towns of the Wend in their beds,
+faster than the hunger for air could wake them. Releases continued for three
 years (**the Exhale**). Other Crowns in the old country failed under the shifted pressure. Groundwater turned
 acid, crops failed, the state lost the lowlands and then lost itself. What happened beyond the old country is
 out of scope and nobody in the basin knows.
@@ -113,12 +116,17 @@ About 4,000 people live in the basin, almost all on the rim, the Edge and the Br
 farming happens by day ("day-farming"): people walk down at dawn and climb back before dusk. The lime-burning
 guild on the escarpment issues the currency (tallies, 9.1) and holds most of the valley's debts. The single
 political fact everyone agrees on: **the line is rising.** Air-marks painted ten years ago are a metre below
-this year's. The Crown is still pressurising. Within a lifetime the rim towns will drown too, unless the Crown
+this year's. The quakes that broke the Crown also opened it to the deep
+volcanic gas under the Brow, so it is fed from below while its old wells corrode and widen. Within a lifetime the rim towns will drown too, unless the Crown
 is relieved somewhere. Where it vents decides who loses their home. That question is the main plot.
 
 ### 2.4 The central thematic question and the ironic engine
 
 **Thematic question:** *When the dead leave a debt, who pays it, and is it ever paid?*
+
+**Owner's answer, 10 Nov 2026: it can be paid.** The debt is real and heavy, and most ways of handling it only
+pass it on. But the game contains a way to pay it down, and the best ending is a true payment, not a deferral
+(13.2).
 
 Every faction answers it differently (Section 4), every currency token is a debt record, the hero's first object
 is a box of debts, and every ending is an answer.
@@ -156,18 +164,40 @@ call it *the still* ("there's still in the cellar"), vents are *breathers*, the 
 **Rules (deterministic, readable):**
 - The still flows to lower ground and pools. Wind clears it; calm, cold nights deepen it. Walls and closed doors
   hold it; opening a door lets it pour through.
-- It is measured in 0.5 m layers (0 to 4). Your head height decides whether you are *under*: standing heads go
-  under at layer 4 (1.5 m and up), crouched at layer 3, prone or unconscious at layer 1. **Sneaking puts your head
-  closer to it.**
-- Under the still you spend breath: one breath per combat turn (or per 10 seconds out of combat). Breath-hold is
-  2 + Breath attribute turns. At zero you are *gasping* (half AP, 5 damage a turn); two turns later
-  *unconscious*; three turns after that, dead. The still knocks out before it kills, which makes it a non-lethal
-  tool if you pull people out (8.6).
-- **Detection is physical.** Flames dim and die in it (the sounding staff, 11.6). Insects go silent and drop.
-  Low-nesting birds are absent. Breathers carry columns of midges drawn by the gas. Dead patches of white trees
-  ring strong vents. Ure herds climb to high ground before the line rises.
-- Daily cycle: day (wind) mostly clear; dusk rising; night pooled in all low ground; dawn white ground-mist where
-  fresh gas vents. Every hub rings a dusk bell.
+- **One height scale.** The ground, every floor, every air-mark and the surface of the gas are all measured in
+  metres above the region's datum, in 0.5 m steps. *The line* in a place is the height of the gas surface there.
+  *Depth* where you stand is the line minus your floor, counted in 0.5 m layers, with no upper limit. Table 2.9
+  fixes the heights.
+- **Your head height decides whether you are *under*.** Heads are at 1.7 m standing, 1.1 m crouched and 0.4 m
+  prone or unconscious, so you go under at depth 4 (2.0 m) standing, depth 3 crouched and depth 1 prone.
+  **Sneaking puts your head closer to it.**
+- **Breath.** Under the still you spend one breath per turn (a combat round is 6 seconds; out of combat, one
+  breath per 6 real seconds). You hold 1 + Breath breaths. From your second turn in a row under, you lose 1 AP
+  per turn, cumulative. At zero you are *gasping* for one turn (half AP, no damage), then *unconscious*; three
+  turns later, dead. Breath is checked at the end of your own turn and again when the gas moves. With your head
+  clear you recover 2 breaths a turn. Everything that breathes follows the same rules (8.5). The still knocks out
+  before it kills, which makes it a non-lethal tool if you pull people out (8.6).
+- **Detection is physical.** A plain flame only dies in air that would already drop a person, so Sounders burn
+  *lean wicks*: starved flames in pierced tin hoods that gutter early. The staff reads danger, not death (11.6).
+  A limewater glass clouds sooner still. Insects go silent and drop. Low-nesting birds are absent. Breathers
+  carry columns of midges drawn by the gas, and the strongest sometimes smell of bad eggs; most give no smell at
+  all. Dead patches of white trees ring strong vents. Ure herds climb to high ground before the line rises. Your
+  own first sign is a headache.
+- **Daily cycle.** By day the wind keeps open ground mostly clear; at dusk the line climbs in steps over two game
+  hours; at night all low ground is pooled; at dawn a white ground-mist marks fresh vents, where expanding gas
+  chills the air. Every hub rings a dusk bell. Day is not a free pass and night is worth entering (5.6).
+
+**Two tiers (decided 10 Nov 2026).**
+- *The line, outdoors.* Each region is divided into pools: hollows, streets, fields. A pool's line is computed,
+  not simulated, from the act, the hour, the wind and whichever caps, wells and fans nearby are open or shut. It
+  rises and falls smoothly and predictably, and the chart shows tonight's line for every pool you have visited.
+- *Live flow, in held volumes and in fights.* Cellars, pipe galleries, stairwells, halls, shafts and any ground
+  inside a fight carry live gas that moves every 6 seconds by the rule in 8.1. This is where doors, caps,
+  bottles and pulls do their work.
+- Caps, wells and fans are flags that other pools read, in this region or another: the Stewardry's caps on the
+  Brow raise the line in Reedhithe's north fields by one layer. Gas is never destroyed, only moved or vented.
+- When you leave a region its live volumes settle to rest for their door and cap states. Only those states are
+  saved.
 
 **Secondary hazards from the same cause.** *Sour water*: groundwater turned acid by dissolved gas, leaching metal.
 Drinking it gives the *Sour* condition (Breath reduced by one until treated with lime or physic). *Breathers*:
@@ -176,8 +206,9 @@ vents that pulse; capping one diverts the gas somewhere else.
 **Why it is not radiation by another name.** Radiation in the genre is an invisible cumulative dose fixed to a
 place, read by a counter, eroding maximum health. The still is acute, fluid and moving; it depends on height,
 posture, hour and wind; it can be moved, released and weaponised; it is read by flames and by silence; and it
-leaves no dose meter. Masks do not help against it (you cannot filter out suffocation), so **there are no gas
-masks or filter timers anywhere in the game**. The counters are height, wind, breath and time.
+leaves no dose meter. Filters do not help against it (you cannot filter out suffocation), so **there are no gas
+masks anywhere in the game**. The only breathing aids carry their air with them: the lime-packed air bladder and
+the rare Kept Suit (8.6, 8.7). The counters are height, wind, breath and time.
 
 ### 2.7 One root
 
@@ -213,6 +244,24 @@ Every major element grows from the same idea: *a harm stored below comes back up
 | Settlement paths and walls | Swept, whitewashed, repaired with dated stair-treads | Labour shows everywhere people live |
 | New building | Timber, rope, lime mortar, hung off old frames | Pale new wood against black concrete |
 
+### 2.9 The height table (provisional)
+
+One table, so that the fiction and the grid use the same numbers. Each region's datum (0 m) is its lowest old
+ground.
+
+| Thing | Height |
+|---|---|
+| One layer of still | 0.5 m |
+| Head: standing / crouched / prone | 1.7 / 1.1 / 0.4 m above your floor |
+| Lift Town storeys | Capsules are staggered in half-levels of 1.5 m around the core; storey *n* has its floor at 1.5 x (n - 1) m. Storey 6 is at 7.5 m, storey 7 at 9.0 m, storey 12 at 16.5 m |
+| Lift Town original deck | 12 m (storey 9). Storeys below it are the core's old service levels, where the poorest tenants live |
+| Ladderfoot line | Ordinary night 7.4 m (just under storey 6); calm-night record 9.2 m (storey 6 drowned, storey 7 awash) |
+| Reedhithe plank walks and line | Walks at 5 to 6 m; ordinary night line 4.5 m, calm night 5.5 m |
+| Mast 31 cabin | 18 m |
+| Drowned Towns | Streets clear by day at the edge; interiors hold 2 to 6 m at all hours; night line 8 m and more at the centre |
+| The Crown | 2.5 m at the rim to 6 m and more at the centre by day; 12 m and more at night. The Listening House podium stands at 6 m |
+| The rising line | +0.5 m (one layer) in every pool at each act transition |
+
 ---
 
 ## 3. World structure
@@ -223,8 +272,8 @@ A hybrid, as the matrix recommends: **five compact, hand-built, seamless hub reg
 joined by an **overland chart** drawn on the player's ledger.
 - **Region maps** are dense, walkable, one seamless space each (no internal loading cells, NDA-20). Vertical
   floors are cutaways, not loads. Each region is about 600 x 600 m of authored ground, plus its verticality.
-- **The overland chart** is a node map of the basin. Travel is instant in real time but costs in-game hours,
-  tallow and (in the optional ruleset) food and water, and can trigger road situations. Inside a region, travel
+- **The overland chart** is a node map of the basin. Travel is instant in real time but costs in-game hours
+  and (in the optional ruleset) food and water, and can trigger road situations. Inside a region, travel
   between discovered points is free. Overland travel *is* the fast travel; it is never a paid convenience (CM-09).
 - Each overland leg has a **rim road** (long, safe) and often a **low road** (half the hours, higher danger band,
   spill risk at night). The player trades time against risk on every leg.
@@ -250,7 +299,7 @@ inherited; lime dust is in everyone's lungs. Connections: lime and tallies to ev
 charcoal from Reedhithe.
 
 **Reedhithe (the Lowmoot).** About 900 people in three stilted villages in the willow carr along the Wend, on old
-bridge piers and stilts, linked by plank walks at 5 to 6 m. Sail-driven **air-mills** turn wooden fans across the
+bridge piers and stilts, linked by plank walks at 5 to 6 m. **Air-mills**, driven by sails in wind and by treadle crews on calm nights, turn wooden fans across the
 day-fields to keep them breathable. It is the most beautiful place in the game and the most dangerous to sleep in.
 The richest soil in the basin is here, fattened by the gas, and it feeds everyone. The Lowmoot wants inherited debt
 cancelled (the Clean Slate), the Draught's relief wells kept shut, and to stay. What is wrong: lime prices are up,
@@ -266,7 +315,8 @@ admitting that the Keeping itself planned to vent. The largest lake, the Mother 
 Connections: sells air-mark data to Fourtop; clay from the Eyes; pilgrim traffic to every hub.
 
 **The Lung (the Draught).** About 500 workers and families in the Keeping's old compressor station on Lung Hill,
-south of the Low: manifolds, pressure vessels, gauges, and the basin's only working engines, driven by vent gas. The
+south of the Low: manifolds, pressure vessels, gauges, and the basin's only working engines, driven by vent pressure (the gas
+does not burn; it pushes). The
 Draught pumps sweet water from deep wells, grows tomatoes in gas-fed glasshouses all year, and builds air rifles,
 air bladders and bottled still. It wants to relieve the Crown through the relief wells into the Low, under its own
 control, and it holds the second key. What is wrong: its chief engineer's night test of Well 9 killed the caravan;
@@ -322,8 +372,8 @@ Lift Town 4, the Lung's stacks, the Capstone mast, and the white forest and Keep
 
 ### 3.5 Travel and encounters (NDA-06)
 
-- **Legs** take 2 to 8 in-game hours and cost one tallow fill per four hours for the sounding staff; the low road
-  at night costs double and risks a spill.
+- **Legs** take 2 to 8 in-game hours. The low road at night risks a *spill*: a sudden local rise of the line
+  across the road, met as a situation.
 - **Situations, not quests.** A road-situation generator picks from 30 templates (patrol clash, Diver salvage
   party, day-farmers caught by dusk, longshanks hunt, a spill across the road, a collector serving a writ, a
   pilgrim column). Inputs: region band, hour, current line, wind, reputation (high Grudge draws hunters). About one
@@ -446,7 +496,7 @@ faction cannot be funded to this standard it is cut whole, never starved (MH-23)
   play: a cap the Stewards maintain saves a pilgrim camp during a breather surge.
 - **Binding deed:** *The Vow and the Seal*. Take the vow and cap Well 9 with clay at night. **Joining costs:**
   Draught Grudge; the vow forbids using the still as a weapon (no bottled still, no opening doors or caps to flood
-  enemies) for as long as you are bound. A mechanical cost every fight.
+  enemies, no pulling or knocking anyone under, and no ordering companions to do so) for as long as you are bound. A mechanical cost every fight.
 
 ### 4.4 The Draught
 
@@ -481,7 +531,9 @@ faction cannot be funded to this standard it is cut whole, never starved (MH-23)
 ### 4.6 The strongbox (the shared object)
 
 The caravan carried the **stocks** (the creditor halves) of the lowland's debts, which the Kilns had sold to the
-Draught. Whoever holds them owns Reedhithe on paper. All four factions want it: the Kilns to reclaim it, the
+Draught. Whoever holds them owns Reedhithe on paper. Under Keeping law, which
+every Counting House still honours, a relief well may be opened only with the consent of whoever holds title to
+the land it vents onto. The box is therefore the right to say yes or no to drowning the Low. All four factions want it: the Kilns to reclaim it, the
 Draught for legal title to the land its wells would drown, the Lowmoot to burn it, the Stewardry to seal it in the
 cap where nobody can ever collect or be freed. The player can keep it (title: *Stockholder*). If the player leaves
 it in the wagon, the Diver Kett takes it and the Divers sell it to the Draught in Act 1; it can be stolen back. Its
@@ -526,7 +578,7 @@ killable and are never placed where combat can reach them. The critical path sur
   maintenance gallery, reaches the Listening House valve hall from below without keys, through deep still.
 - The Listening House's emergency procedures are printed as **pictogram-only cards**: the Keeping designed them so
   anyone could operate a shut-in or a relief. No living expert is needed.
-- **The cost:** companions cannot follow the Diver's way; the High Vent ending is unavailable (it needs the labour
+- **The cost:** companions cannot follow the Diver's way unless they carry bladders or a suit; the High Vent ending is unavailable (it needs the labour
   of at least three factions); only the Low Relief, Shut-in, Hold the Valves and Walk Away resolutions remain, and
   their slides are the harshest variants. An automated kill-everyone run must reach an ending (14.5).
 - Unique loot is never gated behind murder: every key, document and unique item has a trade, persuasion or theft
@@ -542,7 +594,7 @@ killable and are never placed where combat can reach them. The critical path sur
 Read the air       staff flames, insect sound, air-marks, wind, hour
   -> Choose height  walk the low path or climb the frame; stand or crouch
     -> Act          talk, search, salvage, sneak, fight (turn-based, still on the grid)
-      -> Spend      breath, tallow, ammunition, daylight
+      -> Spend      breath, lime, ammunition, daylight
         -> Record   the ledger updates; a stamp, a debt, a name
 ```
 
@@ -550,7 +602,7 @@ Read the air       staff flames, insect sound, air-marks, wind, hour
 
 ```
 Hub (talk, trade, take work)
-  -> Prepare (lime, tallow, bladders, ammunition; check the evening line)
+  -> Prepare (lime, bladders, ammunition; check the evening line)
     -> Go down by day (region or overland leg: salvage, quest site, evidence)
       -> Dusk bell: climb out, or stay low and pay for it
         -> Return and settle (sell, repair, report, stamp SETTLED)
@@ -574,8 +626,8 @@ overland leg and one market visit.
 
 There is no real-time deadline and no hidden clock. Pressure comes from three visible sources.
 1. **The nightly line (hours).** Every day has a dusk. Time of day advances outside combat, dialogue and menus at
-   one game hour per four real minutes, so a day is about 96 minutes of play. The dusk bell gives half an hour's
-   warning. This is weather, not a deadline.
+   one game hour per four real minutes, so a day is about 96 minutes of play. The dusk bell rings two game hours
+   (eight real minutes) before the line reaches its night height, and the line climbs in visible steps until then. This is weather, not a deadline.
 2. **The rising line (acts).** At each act transition the global line rises 0.5 m in low ground. Air-marks are
    repainted, a few low paths become night-impassable, Ladderfoot's storey 7 empties. Act transitions happen only
    when the player triggers them, with a written warning first ("Lusk will move once she knows you hold two keys").
@@ -597,6 +649,39 @@ Each scarcity forces a choice that is visible to the build: a high-Breath diver,
 time, a Reckoning trader who turns salvage into lime efficiently. Scarcity is defended by systems (weight, sinks,
 vendor reserves), not by a difficulty toggle (MH-22).
 
+### 5.6 Day is not safe, and night is worth entering (decided 10 Nov 2026)
+
+Waiting for morning is always allowed and never punished (NDA-09). So noon must not be a free pass, and night
+must pay.
+
+**Day is not safe.**
+- Held volumes keep their gas at every hour: cellars, pipe galleries, lower floors, the interiors of the Drowned
+  Towns. The best salvage is inside them.
+- Breathers pulse on their own rhythm, in minutes, read by midge columns and by the knee flame.
+- About one day in six is a *dead calm*, forecast on the previous evening's broadcast: no wind, and the night
+  line holds until noon.
+- The Crown's sources outrun the wind. It is under the line at every hour.
+- Lint: at least two thirds of the 45 bespoke encounters have the still in play at noon.
+
+**Night pays.**
+
+| Reason to go down after the bell | What it gives |
+|---|---|
+| Lodge rescue calls | Day-farmers caught low. The best-paid work in Act 1 and the fastest Lodge Regard |
+| People who only move at night | Collectors and patrols do not go below the line after dusk, so runaway slakers, smugglers, Clean Slate couriers and frightened witnesses do. At least a third of quests have a night beat or a night shortcut |
+| Night-only harvests | Bottles can be filled only from a night pool or a pulsing breather; slicks are out; ure herds stand on the rises |
+| Thin guards | The Lung approach and the Draught line at the Crown are half-manned at night |
+| Deep salvage | Some held volumes drain into the rising pool outside and can be entered only while it is high |
+
+**The one night nobody may skip.** The Lowmoot quest *The Night Ropes* is a surge at Reedhithe on a dead-calm
+night. The line comes over the lower walks while people are asleep. The player has breath for a few trips and
+chooses whom to carry up, among named adults and elders they have already met. Children sleep on the top walks
+(tone rule 9) and are not at risk. This is the game's present-day loss, and it is why the First Still is more
+than backstory.
+
+**Dusk is graduated.** The chart shows the hour at which each pool you know goes under tonight. If your way out
+is already above tonight's line, the climb is skipped; if it is not, the climb is played.
+
 ---
 
 ## 6. Role-playing and progression
@@ -610,13 +695,18 @@ levels 7 and 13 only. No attribute multiplies XP or skill points (MH-15).
 | Attribute | Combat (visible readout) | Hazard and travel | Dialogue and world | Economy | Why it is not a dump stat |
 |---|---|---|---|---|---|
 | **Frame** (size, strength) | HP 25 + 5 per pip; melee damage +1 per pip above 2; heavy weapons need Frame 4 | Carry 40 kg + 8 per pip (salvage you can haul up) | Force, shove and haul checks; presence options [Frame 4] | More salvage per dive | Low Frame means fragile and poor |
-| **Breath** (lungs, endurance) | Push: spend 2 breath for +3 tiles once per turn | Breath-hold 2 + Breath turns; overland legs cost 10% fewer hours per pip above 3; Sour resistance | The Long Hold and climbing contests; endurance options [Breath 4] | Deep salvage | The still is everywhere |
+| **Breath** (lungs, endurance) | Push: spend 2 breath for +3 tiles once per turn | Holds 1 + Breath breaths; overland legs cost 10% fewer hours per pip above 3; Sour resistance | The Long Hold and climbing contests; endurance options [Breath 4] | Deep salvage | The still is everywhere |
 | **Hands** (dexterity) | AP 6 + Hands; reload and item use 1 AP cheaper at 4+ | Climbing costs | Sleight options (palm a token in a dispute) [Hands 4]; some Tinkering checks need Hands 3 | Crafting yield | AP is valuable, but Wits sets hit chance and Nerve sets crits |
-| **Wits** (perception, reasoning) | Initiative (which side moves first); hit chance +5 per pip; enemy stats shown at 4+ | Still-reading radius 2 + Wits tiles (exact depths); spill forecasting | Deduction and notice options [Wits 4]; the Plain register at 1 (6.7) | Appraisal hints | Blind to the still and to lies without it |
+| **Wits** (perception, reasoning) | Initiative (which side moves first); hit chance +5 per pip; enemy stats shown at 4+ | Spots hidden breathers and sources within 2 + Wits tiles; readings out of sight stay fresh longer; spill forecasting | Deduction and notice options [Wits 4]; the Plain register at 1 (6.7) | Appraisal hints | Blind to hidden vents and to lies without it |
 | **Nerve** (composure, will) | Composure capacity = Nerve (the banked crit resource, 8.3); no panic under the still at 3+ (at 1-2, breath drains double on the first turn under) | Night travel without penalty at 4+ | Intimidate and hold-your-ground options [Nerve 4]; companions allowed: 1 at Nerve 1-2, 2 at 3-4, 3 at 5 | Haggling under pressure | Companions and crits both need it |
 
 Every attribute is read by at least three systems, at least one of them non-combat, and gates dialogue somewhere in
 every hub (MH-11, MH-15).
+
+**Seeing the still is not a stat.** Every character sees the gas in their line of sight and one round ahead
+(8.1). Attributes, skills and perks buy more: hidden sources, longer forecasts, sight through walls. The prologue
+is played on background alone, and attributes, tags and traits are chosen on entering Ladderfoot, after the
+player has met the still.
 
 ### 6.2 Skills
 
@@ -625,7 +715,7 @@ Eleven skills, ranked **0 to 10**. Checks are set only at 2, 4, 6, 8 and 10, so 
 
 | Skill | World and combat uses | Dialogue use |
 |---|---|---|
-| **Sounding** | Still depth and flow forecast in combat (1/2/3 rounds ahead at 2/5/8); route reading on overland legs; spill timing | Contradict a guide; Lodge negotiation; air lore that wins a Steward's respect |
+| **Sounding** | Longer flow forecast in combat (everyone sees 1 round ahead; 2 at rank 4, 3 at rank 8); the hour each pool goes under, on the chart; route reading on overland legs; spill timing | Contradict a guide; Lodge negotiation; air lore that wins a Steward's respect |
 | **Shooting** | Air guns, breech-loaders, old cartridge rifles; hit chance | Read a weapon's maker and loader as evidence; threaten credibly; Draught armoury talk |
 | **Melee** | Hooks, bills, mauls, hook-poles, unarmed; grapple and non-lethal holds | Accept or decline a Quicken "stick settlement" duel; size up a fighter |
 | **Stealth** | Sneak, hide, pickpocket, plant items | Claim you overheard; lie about where you were; notice a watcher |
@@ -665,11 +755,11 @@ playtests.
 
 | Trait | Upside | Cost |
 |---|---|---|
-| Long Lungs | +2 breath-hold turns | Healing items heal 25% less (your heart races) |
+| Long Lungs | +2 breaths held | Healing items heal 25% less (your heart races) |
 | Night-Eyed | See 2 tiles further at night without a flame | -10 hit chance in full daylight |
 | Heavy-Handed | Melee +3 damage | Aimed attacks cost +1 extra AP |
 | Snap Shot | All shots -1 AP | You cannot make aimed attacks |
-| Small | Fit crawlspaces (new routes); enemies detect you at 2 tiles less | Your head goes under the still one layer sooner |
+| Small | Fit crawlspaces (new routes); enemies detect you at 2 tiles less | Your head goes under the still one layer sooner (standing at 3, crouched at 2; prone stays at 1) |
 | Debtor's Luck | Start with 300 extra tallies | You owe the Kilns 600 from day one; collectors appear in Act 2 |
 | Light Sleeper | Never ambushed when camping | Resting heals at half rate |
 | Cold Blood | Composure fills one point faster per fight | Companion approval gains halved |
@@ -691,13 +781,13 @@ Sample perks:
 
 | Perk | Tag | Effect |
 |---|---|---|
-| Read the Ripple | Information | Exact still depth shown for every tile in sight, not only your reading radius |
-| Pull Up | Verb | Drag an unconscious adjacent body out of the still (2 AP) and climb with it |
+| Read the Ripple | Information | The still is shown through walls and floors in adjoining rooms, and readings out of sight never go stale |
+| Pull Up | Verb | Drag an unconscious body at ordinary movement cost, and carry it up ladders |
 | Uncork | Verb | Release pooled still deliberately: hook a cellar door or crack a small cap from 3 tiles |
 | Collector's Eye | Information | See every NPC's debts; adds "call in a debt" options |
 | Bellows Chest | Exception | Breath does not drain on a turn in which you neither move nor act |
 | Ladder Work | Exception | Climbing costs 1 AP; no penalty to attack from a ladder |
-| Quiet Flame | Trade-off | Your staff does not reveal you at night; tallow burns twice as fast |
+| Quiet Flame | Trade-off | Your staff does not reveal you at night; hooded this way, it gives no flow preview |
 | Steady Hands | Trade-off | Composure capacity +1; -2 AP on any turn you moved |
 | Bad Debt | Trade-off | Vendors give you up to 500 tallies of credit; miss a due date and collectors come |
 | Witness | Information | When you hold relevant evidence, lies against it are flagged in dialogue |
@@ -740,7 +830,7 @@ Four companions, one per major faction. Party size is set by Nerve (one to three
 | Companion | Faction and theme | Gameplay perk (changes how you play) | Personal quest: two defensible outcomes | Objects to / leaves if |
 |---|---|---|---|---|
 | **Sefa Orrin**, day-farmer, Teo Marl's partner | Lowmoot; inherited debt | *Low Path*: low-road legs take 25% fewer hours and her hook-pole can pull enemies into the still | *What Teo Did*: make Teo's diversion public (the truth; it costs the Clean Slate its moral standing), or bury it (protects the movement; leaves the Draught carrying all the blame) | You bind to the Kilns; you vent into the Low; you sell the box to the Draught |
-| **Ammon Pell**, steward of the air-marks | Stewardry; faith versus evidence | *Clay Hands*: cap a small breather mid-fight (3 AP), turning the still off in a radius of 2 | *The Sealed Shelf*: reveal the High Vent plan to Capstone (schism, truth), or keep it within the order and reform from inside (protects the community) | You open a capped well; you desecrate the cap; you bind to the Draught |
+| **Ammon Pell**, steward of the air-marks | Stewardry; faith versus evidence | *Clay Hands*: cap a small breather mid-fight (3 AP), stopping its inflow; gas already out stays, and the blocked gas surfaces somewhere else afterwards | *The Sealed Shelf*: reveal the High Vent plan to Capstone (schism, truth), or keep it within the order and reform from inside (protects the community) | You open a capped well; you desecrate the cap; you bind to the Draught |
 | **Idris Vane**, Draught engineer, on the Well 9 crew | Draught; complicity | *Pressure Work*: valves and locks 2 AP cheaper; crafts bladders with +2 breaths | *Confession*: testify publicly (ruins her and helps the truth), or sabotage Lusk quietly from inside | You kill Draught workers in numbers; you destroy the Lung |
 | **Hollis Crane**, retired Kiln collector | Kilns; debt as duty | *Collector's Eye* while he is with you; collectors stand down when he speaks | *The Crane Account*: accept a settlement that frees him but passes the debt to his niece, or challenge the inheritance rule in the Counting House and lose his pension | You burn tally records; you bind to the Lowmoot |
 
@@ -870,14 +960,29 @@ The combat model is fixed before the stat system (MH-18). Turn-based, presented 
 
 ### 8.1 Space and turn structure
 
-- **Grid** of 2 m squares with height levels (floors, ladders, stilts, roofs). The still occupies each square in
-  0.5 m layers (0-4) and is drawn as a faint tinted volume inside your reading radius (2 + Wits tiles; full sight
-  with *Read the Ripple*).
+- **Grid** of 2 m squares with height levels (floors, ladders, stilts, roofs). Each square stores the height of
+  the gas surface on the one scale of 2.9; depth is that height minus the square's floor.
+- **Everyone sees the still.** In your line of sight the gas is drawn as a surface with a hard edge, with contour
+  lines where a prone, crouched and standing head would go under, and a waterline on every body standing in it
+  (11.6). Squares out of sight keep their last reading, hatched and ageing. Everyone also sees a ghost of where
+  the surface will be after the next flow.
 - **Side phases.** Combat starts with a side-initiative check: the leader with the higher Wits (+2 if their side
   ambushed) moves first. In the player's phase you move party members in any order. In the enemy phase all enemies
   act; their animations are batched and played at 2x by default (1x, 2x, 4x, or "skip movement"; MH-18).
-- **The still moves at the end of every round**: it flows to lower adjacent squares, sources add, wind and fans
-  remove, closed doors hold. Flow is deterministic and, with Sounding, previewed 1-3 rounds ahead.
+- **The still moves at the end of every round**, by one fixed rule, in two passes:
+  1. Across every open edge between two neighbouring squares, gas moves from the higher surface to the lower,
+     if the higher surface is above the sill between them. A wall or closed door is an unpassable sill; a low
+     wall, a window or a stair has a height. The amount moved is half the difference in layers, rounded down, at
+     least 1 and at most 2.
+  2. Gas is conserved: what leaves one square arrives in the next. Sources (breathers, opened wells) add 1 to 3
+     layers a round. Wind takes 1 layer a round from exposed squares; a fan takes 1 layer a round within 2
+     squares. Open ground at the edge of the fight is held at the outdoor line.
+  A front therefore advances at most two squares a round: you can outrun it in the open, and not on a stair or
+  in a corridor. Gas reaches an upper floor only when the room below has filled to that floor. The flow is
+  deterministic; Sounding extends the preview to 2 and 3 rounds, and a preview cannot foresee what an enemy
+  will open.
+- **Time is frozen in a fight** except for this flow: the outdoor line does not rise mid-fight unless the
+  encounter is authored to do so and says so at the start.
 - **Saving:** the game autosaves when combat starts and cannot be saved mid-fight, so to-hit rolls are played, not
   reloaded (design-principles §6, fourth chain; NDA-04).
 
@@ -890,6 +995,8 @@ AP per turn = 6 + Hands (7-11). Up to 2 unspent AP become Guard (+5 defence each
 | Move one square | 1 |
 | Climb one level (ladder, stilt, rope) | 2 (1 with *Ladder Work*) |
 | Crouch or stand | 1 |
+| Drop prone / stand up from prone | 1 / 2 |
+| Drag an unconscious body one square | 2 |
 | Pistol or air pistol shot | 3 |
 | Rifle or air rifle shot | 4 |
 | Breech-loader shot | 5 |
@@ -949,7 +1056,7 @@ sheet is signed off on paper before production.
 | Weapon | Skill rank | Damage | AP | Notes |
 |---|---|---|---|---|
 | Knife | 0 | 6 | 2 (melee) | Silent |
-| Hook-pole | 3 | 7 | 3 | Reach 2; *pull* the target one square toward you |
+| Hook-pole | 3 | 7 | 3 | Reach 2; *pull* the target one square toward you and knock it prone; also hauls an unconscious body from a safe square |
 | Billhook | 3 | 10 | 3 | |
 | Quarry maul | 5 | 18 | 4 | Frame 4; knockdown on Steady |
 | Air pistol | 0 | 8 | 3 | Quiet; 4 shots per charge |
@@ -957,7 +1064,7 @@ sheet is signed off on paper before production.
 | Kiln long gun (breech-loader) | 5 | 20 | 5 | Loud: alerts the whole map |
 | Pneumatic bolt-thrower | 7 | 16, pierce 3 | 4 | Draught masterwork |
 | Old-world survey rifle | 9 | 24 | 4 | 5-round magazine; cartridges 40 t each |
-| Bottled still (thrown) | 3 | 0 | 3 | 2 layers of still over 3 x 3 squares for 3 rounds |
+| Bottled still (thrown) | 3 | 0 | 3 | Raises the still 4 layers on the target square and 2 on the eight around it; the gas then flows and drains by the ordinary rule |
 | Quicklime bomb (thrown) | 3 | 4 + blind | 3 | -30 hit chance for 2 turns; illegal in every hub |
 
 Player HP is 25 + 5 per Frame pip at level 1 (40 at Frame 3), +3 per level (79 at level 14, Frame 3).
@@ -974,7 +1081,7 @@ Player HP is 25 + 5 per Frame pip at level 1 (40 at Frame 3), +3 per level (79 a
 | Enemy | HP | Threshold | Verb |
 |---|---|---|---|
 | Rooter (boar) | 30 | 2 | Charge; *uncork*: crashing a cellar door releases pooled still |
-| Longshanks | 16 | 0 | *Herd*: moves to push you toward still squares; avoids still itself |
+| Longshanks | 16 | 0 | *Herd*: moves to push you toward still squares; crosses shallow still but never ends a turn with its own head under |
 | Slick | 9 | 0 | *Submerge*: hides inside still squares; bites legs (cripple) |
 | Mourner flock | 12 per flock square | 0 | *Mob*: -15 hit chance for anyone adjacent; calls more to the wounded |
 | Papermaker swarm | 10 per swarm | ignores threshold up to 2 | *Swarm*: moving area follows the last attacker; dies in still |
@@ -984,21 +1091,46 @@ Player HP is 25 + 5 per Frame pip at level 1 (40 at Frame 3), +3 per level (79 a
 | Draught Guard | 44 | 8 | Air rifle; flanks; bottled still |
 | Pressure Guard (finale) | 52 | 12 | Opens valve lines on the podium in turns |
 
+**Enemies breathe by the player's rules.** Head height: slicks and rooters count as crouched, longshanks and
+people as standing, ures go under only at depth 5; flocks and swarms fly above it and scatter or die if it
+reaches them. Breaths held: most animals 2, people 3, Drowners and Draught Guard 5 (with bladders), slicks 8 (the
+diving reflex), Pressure Guard 8. Nobody takes damage from gasping; the still kills only by the timer in 2.6, so
+anything that goes under can be pulled out alive.
+
+**Enemies use the still on every difficulty.** People avoid only depth they cannot survive for the turns they
+need. Squads close doors behind you, open them onto you, throw bottles and hold the exits from low ground.
+
+**Encounter lint.** Every bespoke encounter must contain at least one decision that depends on where the still
+is or will be, and must give a reason to go down: an objective across a pool, a source that keeps rising, a
+person to bring out. A fight that is won by standing on high ground and shooting fails review.
+
 ### 8.6 Stealth and non-lethal options
 
 - Detection by sight cones and noise. Crouching reduces visibility by 40% **and lowers your head one still layer**.
-- **Your flames give you away.** A lit staff reveals you at night at 8 squares; dimmed, you cannot read the still.
+- **Your flames give you away.** A lit staff reveals you at night at 8 squares; hooded, you see the
+  still only within 2 squares and get no preview. The staff burns freely: light costs exposure, never fuel.
 - Non-lethal kit: chalk-ball ammunition, chokeholds (Melee 3), knockout blows, and **the lull**: a target put under
-  the still falls unconscious before it dies. Pull them out (*Pull Up*, or 2 AP to drag) and they live. Leaving them
+  the still falls unconscious before it dies. Pull them out and they live: drag an
+  adjacent body for 2 AP a square, which puts you beside them and perhaps under, or haul from a safe square with
+  a hook-pole or a rope. Leaving them
   is killing them, and NPCs who find the bodies treat it as murder.
 - Pacifist completion is possible on the main path (6.10).
+- **Air bladders.** A bladder is a hide air-bag with a lime pack that scrubs what you breathe back into it. It
+  holds 3 extra breaths, spent automatically after your own. Refilling is free anywhere above the line and uses
+  one measure of lime per three refills. You carry at most two.
+- **Companions** breathe by the same rules, use their bladders without being told, and under AI control never
+  end a turn under unless ordered to.
+- **If you go under.** A conscious companion can pull you out and the fight goes on. If the whole party is
+  unconscious under the still, that is death on Line and Low (reload the autosave) and a Lodge rescue on Lantern
+  (8.8). Sleeping and camping are allowed only on squares above tonight's line; the game tells you so and why.
 
 ### 8.7 Top gear, earned late (NDA-16)
 
 The **Kept Suit** is the setting's iconic piece of power: the one thing that lets you walk in deep still. *See one*:
 a dead Keeping surveyor in a ruined suit in the Drowned Towns (Act 1). *Fear one*: a Draught diver in a working suit
 hunts you through the still (Act 2). *Earn one*: the Divers' questline or the Listening House stores (Act 3). Upkeep:
-air refills (120 t) only at the Lung or at the base with the compressor slot; gaskets need the rare old-world parts.
+air refills (120 t) only at the Lung, or free at the base workshop once a hand compressor is fitted (a workshop
+upgrade); gaskets need the rare old-world parts.
 Draught pressure plate is likewise visible early on guards and purchasable only at Trusted standing.
 
 ### 8.8 Difficulty and length
@@ -1007,7 +1139,7 @@ Draught pressure plate is likewise visible early on guards and purchasable only 
 |---|---|
 | Lantern | More loot, heals 25% stronger, enemies retreat at half HP, unconscious-in-still outside combat means "rescued by the Lodge" for 20% of your tallies |
 | Line (default) | As specified |
-| Low | 30% scarcer loot, smarter AI that uses still tactics every fight, healing items scarcer, vendors' reserves smaller |
+| Low | 30% scarcer loot, enemies coordinate floods and hold exits as a squad, healing items scarcer, vendors' reserves smaller |
 
 The *Below the Line* ruleset (9.8) layers on any setting. **Expected encounter length:** 3-5 rounds, 4-7 minutes at
 default speed; set pieces 8-12 minutes. Target share of play time in combat: about 25%.
@@ -1060,7 +1192,7 @@ sort and compare.
 
 | Phase | Short of | Pressure release |
 |---|---|---|
-| Act 1 | Ammunition, heals, tallow | Day-farming jobs; first salvage |
+| Act 1 | Ammunition, heals, lime for bladder packs | Day-farming jobs; first salvage |
 | Act 2 | Lime and repairs as gear tier rises; daylight for deep dives | Salvage diving opens; base cistern |
 | Act 3 | Breath for the Crown; cartridges | Wealth flows into debts and masterworks; ammunition and heals stay weighted |
 
@@ -1116,15 +1248,15 @@ Owned by the design team, shipped at launch, every part individually toggleable,
 
 | Toggle | Rule |
 |---|---|
-| Needs | Hunger, thirst and sleep. Thirst is met only by sweet water; sour water stacks *Sour* (-10% max HP each) until treated. Needs touch route planning, spoilage and trade, or they get cut |
+| Needs | Hunger, thirst and sleep. Thirst is met only by sweet water; sour water stacks *Sour* (a further -1 Breath each, to a minimum of 1) until treated. Needs touch route planning, spoilage and trade, or they get cut |
 | Saving | Save only at beds, the base, or on entering a hub |
 | Carry | Carry weight x0.6 |
 | Healing | Over time only; no in-combat burst |
 | Ammunition weight | x1.5 |
-| Travel | Overland tallow and food costs x2; no free travel inside regions |
+| Travel | Overland food and water costs x2; no free travel inside regions |
 | Breath | Breath-hold -1 |
 | Companions | Downed companions die if not stabilised within 3 rounds |
-| Nights | Still nights 50% more frequent |
+| Calm | Dead-calm days twice as frequent (5.6) |
 
 It never awards more XP and never changes the level cap.
 
@@ -1163,6 +1295,9 @@ policy; a world of monsters; a power fantasy in its first half.
 - **Darkness:** the still killed a nation in its sleep and is shown frankly: bodies in deep still, emptied capsules,
   the quarry slakers. Atrocities committed in the present are shown as aftermath and consequence, never lingered on.
   No sexual violence. Debt-bondage is shown as an ordinary, accepted institution, which is the horror of it.
+- **The still as a weapon (owner's decision, 10 Nov 2026).** Using the gas in a fight is ordinary in this world
+  and in play, and the game does not scold it. The one line it draws is the one the world draws: leaving an
+  unconscious person under is killing them, and is treated as killing.
 
 ### 10.3 Naming conventions
 
@@ -1173,7 +1308,7 @@ policy; a world of monsters; a power fantasy in its first half.
 | People | Short given names; trade or landscape surnames | Sefa Orrin, Hollis Crane, Ora Lusk, Dov Kettle |
 | Creatures | Folk names from behaviour or look, never monstrous or pseudo-Latin | longshanks, slicks, mourners, ures |
 | Items | What users call them | sounding staff, hardnose bolt, fitter's roll |
-| Forbidden | Real brands, real organisations, puns on real names, anything from Fallout | |
+| Forbidden | Real brands, real organisations, puns on real names, anything from Fallout; the words *mist* and *fog* for the still itself (it is invisible, and other works own that image) | |
 
 ### 10.4 Sample text
 
@@ -1325,8 +1460,14 @@ White Edge; heather on the Brow. Flora is information: lush means moderate seepa
   "survey buff" with red-orange register lines, because orange was the old world's air-safety colour; re-tint with
   other found stocks (blue carbon, green duplicate). Quests close with a SETTLED stamp; locked-out content gets
   CLOSED.
-- **The staff as HUD.** The three flames sit at the screen edge and report the still at your feet: lit, guttering,
-  out. Breath shows as pips over your head only when you are under.
+- **The staff as HUD.** The three lean-wick flames sit at knee (0.5 m), hip (1.0 m) and shoulder (1.5 m), and are
+  drawn both on the character and at the screen edge. Knee out: do not lie down. Hip out: do not crouch on the
+  next step down. Shoulder out: a croucher is under, and you are one layer from it. Breath shows as pips over
+  your head only when you are under.
+- **The reading.** The still is invisible in the world and visible in the interface. It is drawn in the ledger's
+  own survey language: a flat surface with a hard edge, in red-orange register ink, hatched in three patterns
+  for prone, crouched and standing depth, with a waterline on bodies. This overlay is interface, not scenery, so
+  the bans on glow and tint in 11.1 do not apply to it. It never relies on colour alone.
 - **It is also a good list.** Every list has search, sort, filter and compare; a dense PC layout; legible highlight.
   Benchmark: find a named item in a 200-item inventory in under 5 seconds.
 
@@ -1351,6 +1492,20 @@ White Edge; heather on the Brow. Flora is information: lush means moderate seepa
 
 Each pin on a mood board carries a stated purpose. Prototype one environment, Ladderfoot's storey 6, before the look
 bible locks (catalogue takeaways).
+
+### 11.8 Accessibility: the minimum set
+
+The still leans on sound, on subtle depth cues and on two real-time clocks, so these ship at launch:
+
+| Need | Option |
+|---|---|
+| Deaf and hard of hearing | A visual twin for every informative sound: drawn insects that are absent over the still, flame-height animation, direction pings for creature calls, captions for hisses, bells and calls |
+| Colourblind and low vision | Depth shown by hatch pattern and contour, never hue alone; a numeric depth on any square on request; high-contrast overlay; interface scaling; a plain ledger typeface |
+| Motor and reading pace | Day clock at full, half or paused-while-idle; out-of-combat breath at full or half speed; one undo of the last move per fight; full rebinding; gamepad and one-handed play |
+| Fairness | A warning before ending a turn on a square that will flood; the one-round preview is never hidden or skipped, at any animation speed |
+| Distress around suffocation | A content note; sliders for heartbeat, muffling and vignette; gasping shown as a fade |
+
+These are options, not difficulty settings, and none of them removes the still.
 
 ---
 
@@ -1401,7 +1556,7 @@ outcome splits. The Reader names the player by their title. Hub stake clocks are
 assembled from about 120 short recorded words and numbers in the Reader's voice ("Reedhithe. Five. Rising after
 dark."), the way automated weather broadcasts are, so it reacts to the real state at almost no cost.
 
-> *"Evening line, from Fourtop. Ladderfoot, nine point two, steady. Reedhithe, five, rising after dark. The Steps
+> *"Evening line, from Fourtop. Ladderfoot, seven point four, steady. Reedhithe, five, rising after dark. The Steps
 > clear. Capstone clear. The Lung don't tell us. Keep out of the hollow under Well Nine. We've had no word from
 > there since the Pask caravan."*
 
@@ -1450,7 +1605,7 @@ Three signature sounds carry information, recorded from real equivalents:
    the still is. In this game, silence is the alarm. This inverts the familiar clicking-counter device.
 3. **The ledger.** Pencil on paper, page turns, the tally token's clay clack, the SETTLED stamp.
 
-Also: every hub rings a **dusk bell** (half an hour's warning); every creature family has a learnable call heard
+Also: every hub rings a **dusk bell** (two game hours' warning); every creature family has a learnable call heard
 before it is seen (11.5); when you go under, ambience muffles and your heartbeat comes up; air guns have a sharp
 near crack and a far snap, breech-loaders a near boom and a far rolling echo. Audit: with the screen covered, a tester
 names the still level and the nearest creature by ear.
@@ -1503,12 +1658,17 @@ what you hold.
 
 | Resolution | Requires | Who pays |
 |---|---|---|
-| **Low Relief** | Lusk's plan: open Wells 9-14 into the Wend lowland | The Lowmoot: the Low becomes a permanent still basin; Reedhithe is abandoned. The rim is safe for a lifetime |
+| **Low Relief** | Lusk's plan: open Wells 9-14 into the Wend lowland. It needs the consent of whoever holds title to the Low (4.6), so the box decides it; if the stocks were burned, nobody is left with the right to refuse | The Lowmoot: the Low becomes a permanent still basin; Reedhithe is abandoned. The rim is safe for a lifetime |
 | **The High Vent** | The Keeping's contingency survey, a repaired pipe route, Trusted standing with three factions or bound to one and Trusted with two | Everyone, a little: the Kilns fund it and lose their monopoly, the Stewardry breaks its doctrine and vents on its holy rim, the Draught shares control. The line falls over years |
 | **Reseal** | Stewardry and Kilns: lime slurry pumped into the wells | The grandchildren: thirty years of a stable line, then a worse return |
 | **Shut-in** (fail-safe) | The pictogram emergency card alone | The same as Reseal, but buys ten years, not thirty |
 | **Hold the Valves** | All three keys and force | Whoever displeases you: you become the valley's keeper of its breath |
 | **Walk Away** | Break the controls, or leave | Everyone, slowly: nothing can vent or seal; the rim towns climb or leave over a generation |
+
+**The debt can be paid (owner's decision, 10 Nov 2026).** The High Vent is a true payment, not a deferral: the
+line falls, year on year, and the slides say so plainly. It is the hardest resolution to reach and it costs every
+faction something, which is what paying looks like. Redeeming the lowland stocks (9.2) is the same answer at the
+scale of one town. The other resolutions pass the debt on, and their slides say that plainly too.
 
 No resolution is required to involve a fight or a sacrifice that contradicts the player's tools (NDA-10). Every
 scripted beat in the finale is audited against party abilities: companions with bladders or a Kept Suit can enter
@@ -1566,8 +1726,11 @@ about 3,500 (`design-insights/production-metrics.md` §7, all `[C]`).
 | Music | 52 diegetic tracks; about 50 minutes of adaptive score | Section 12.2 |
 | Pictograms | About 250 (UI, Plain register, perks) | Flat icons in one system |
 
-**The expensive pillar's budget:** the still system (simulation, AI awareness, previews, level-design tools) is
-capped at **30 person-months** of programming and design, with a go/no-go at month 4 (14.6).
+**The expensive pillar's budget:** the still system (computed outdoor line, live flow, AI awareness, previews,
+the reading overlay) is planned at **30 person-months** of programming and design, plus about 12 person-months of
+level-design tooling (an editor scrubber over hour, act, wind and door states; automated trap and softlock
+checks). The review found the v0.1 team had no level designer; the still needs two to three. Go/no-go follows the
+prototype (14.6).
 
 ### 14.2 Schedule (design level)
 
@@ -1589,6 +1752,12 @@ UI with search; every one of the 11 skills used at least five times in the hub (
 least one option; the Plain register for every slice main-path node; one ending slide generated from slice state;
 and stable play on the weakest target hardware. The slice also produces our first real numbers: words per writer-day,
 cost of one slide, still-system cost.
+
+**The slice teaches the still one idea at a time:** above and below (the wagon roof, where you cannot fall in);
+the flames (one step down a ladder); the insects; breath and the lull (a safe dip for the box, and Kett pulls you
+out); air-marks, the bell and the line (the walk into Ladderfoot); posture (a daytime fight on high ground); flow
+(a stairwell that floods, previewed); doors (the sub-basement in *Nine Metres*); wind and sources (the stack and
+the breather); then the first dusk climb and one Lodge rescue call at night.
 
 ### 14.4 Cut list, in priority order (first to go first)
 
@@ -1613,7 +1782,10 @@ and its trading faction (first expansion candidate); armour condition (9.5); wea
 - **Automated checks run on every build:** kill-everyone run reaches an ending; every ending slide is reachable; the
   check-distribution table (no skill or attribute at zero uses per hub; at least 20% non-optimal tagged options);
   identical-reply lint; the flag graph shows an outbound edge from every hub; piercing beats standard ammunition for
-  every calibre; a simulated wealth curve against sink prices at 25/50/75/100% of content.
+  every calibre; a simulated wealth curve against sink prices at 25/50/75/100% of content;
+  and for the still: flow is bit-identical across platforms and conserves gas; every walkable square has an exit
+  within the shortest breath-hold in every hour, act and door state; spawn, save and rest squares are clear in
+  all states; no single killable operator makes a route impassable.
 - **Quest logic has fail-safes:** alternate triggers, redundant information from living witnesses and documents.
 - **Densest hub first on the weakest hardware:** Ladderfoot is the first region built and profiled.
 - **Launch commitments:** known quest blockers are release-blocking; crash-free play time is measured against a
@@ -1629,8 +1801,10 @@ and its trading faction (first expansion candidate); armour condition (9.5); wea
 
 | Risk | Why it matters | Mitigation |
 |---|---|---|
-| The still is unreadable or unfair | It is the expensive pillar and the identity | Coarse layers, deterministic flow, previews, the lull before death; a month-4 readability test: 8 of 10 testers predict next-round flow correctly. If it fails, fall back to static still zones with scripted changes |
-| The still system overruns | Engineering on a small team | 30 person-month cap; reuse the same grid for exploration and combat |
+| The still is unreadable or unfair | It is the expensive pillar and the identity | Gas shown to every build, one-round preview, the lull before death, and the prototype in 16.2 with its pass marks. Fallback: keep the computed outdoor line and replace live flow with authored room states (a door toggles a scripted change), which keeps "read the air" and loses improvised flooding |
+| Live flow adds nothing players notice | It is the costly half of the pillar | The prototype plays the same fights with live flow and with scripted gas, blind. If players cannot tell them apart, take the fallback |
+| Mistaken for existing work | The 2018 film *Dans la brume* and an unreleased colony game, *Above: Colonies of the Mist*, share "live above heavy gas" | Never pitch the premise alone; lead with flames, silence, the ledger and the Lift Towns; never call the still mist or fog; re-check the title before announcement |
+| The still system overruns | Engineering on a small team | Two tiers (2.6): live flow only in held volumes and fights; the outdoor line is a lookup |
 | Text volume and branching outgrow QA | Reactivity multiplies bugs (MH-32) | Measured words-per-day in the slice; content lock at 28; automated tests; "less content, fewer bugs" |
 | The Plain register reads as mockery | Tone and reputational risk | Writing rule 6.7; sensitivity readers; one owner |
 | Metabolist architecture read as a cultural skin, or the lush Low read as Nausicaa | Originality | Consultant review; the ban list; distance checks on every mood board |
@@ -1744,8 +1918,14 @@ a stated deliverable or measurement is still owed. **Open** = needs detail befor
 
 1. ~~Name the tone owner~~ (MH-25). **Resolved 10 Nov 2026:** the project owner sets tone. The tone bible is
    still owed.
-2. **Still prototype:** is a 0.5 m layer grid with end-of-round flow readable to players who have never seen it? What
-   is the minimum preview that makes it fair? (Month-4 test, 14.6.)
+2. **Still prototype** (about eight person-weeks, grey boxes, no art). One 60 x 60 map with a slope and hollow, a
+   two-storey building with a door and a stair, one breather and a wind toggle; a three-against-three fight with
+   move, posture, door, pull and bottle; the fixed camera; the reading overlay and preview; enemies that flood.
+   Pass marks: 12 of 15 first-time testers predict a door-and-slope flow with the preview on; 90% can say whether
+   a given head is under, from every camera rotation, with sound off; players use the gas on purpose in 60% of
+   fights and change a plan because of next round's gas in at least a quarter; 70% of deaths are judged fair; and
+   testers can tell live flow from scripted gas when both are played blind. Failing the last one means the
+   fallback in 14.6.
 3. **Composure tuning:** does +1 per aimed hit make aimed shots dominant over volume? Paper-test one burst-style and
    one precision build against the same fights.
 4. **Hands and AP:** does +1 AP per pip make Hands the god stat, as Agility was? If playtests say yes, move to
@@ -1767,4 +1947,8 @@ a stated deliverable or measurement is still owed. **Open** = needs detail befor
     or decide one now (NDA-22 discipline).
 15. **The estuary and its trading faction** as the first expansion: decide only after launch stability is proven;
     it adds horizontal content and never raises the level cap.
+16. **The title.** "Above the Line" shares its first word and its pitch with an unreleased colony game, and is an
+    advertising term. Keep it as the working title; decide the shipping title and tagline before any announcement.
+17. **Breath tuning.** Does 1 + Breath with the cumulative AP loss make the still bite inside a 3-5 round fight
+    without making Breath a compulsory stat? Paper-test at Breath 1, 3 and 5.
 

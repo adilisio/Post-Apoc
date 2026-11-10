@@ -27,6 +27,7 @@ Research is complete (39 documents under `research/`) and the first synthesis pa
 | Document | What it is |
 |---|---|
 | `design/post-mortem-matrix.md` | The acceptance checklist: must-haves (`MH-xx`), never-do-agains (`NDA-xx`) and contested questions (`CM-xx`), each with evidence from the research |
-| `design/game-concept-outline.md` | First design specification for our own game (working title *Above the Line*), audited against the matrix |
+| `design/game-concept-outline.md` | Design specification for our own game (working title *Above the Line*), v0.2, audited against the matrix |
+| `design/still-review.md` | Twelve-lens critique of the core mechanic (the still) and what it changed in v0.2 |
 
 No engine code yet; the outline's section 16 lists the open questions for the next phase.
