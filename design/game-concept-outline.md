@@ -1132,9 +1132,8 @@ It never awards more XP and never changes the level cap.
 
 ## 10. Tone and writing guide (MH-25, MH-26, NDA-21)
 
-**Owner:** the lead writer holds sign-off and veto on every area's register, with a sign-off log per area. Until
-that person is hired, the lead designer holds it. (The owner must be a named person before content production; see
-Section 16.)
+**Owner:** the project owner (adilisio) sets tone and holds sign-off and veto on every area's register, with a
+sign-off log per area. Decided 10 Nov 2026.
 
 **The game refuses to be:** a joke about the end of the world; misery for its own sake; a lecture about climate
 policy; a world of monsters; a power fantasy in its first half.
@@ -1541,6 +1540,10 @@ with the labelled pre-finale save offered.
 
 ### 14.1 Team assumption and content budget (MH-33)
 
+**Owner's direction, 10 Nov 2026:** team and scope are flexible; the goal is a game worth building, not a game
+sized to a fixed budget. The figures below are the v0.1 baseline and are no longer a constraint. Decisions in this
+document that were made mainly for cost (fixed camera, voice volume, five hubs, cut estuary) are open for review.
+
 **Assumed team:** seven full-time equivalents for 36 months (lead designer and writer, writer, quest and systems
 designer at half time, 1.5 programmers on an off-the-shelf engine, two artists, producer and QA lead), about 250
 person-months, plus about 45 person-months of contractors (composer and musicians 8, voice 6, external QA 18, art
@@ -1671,7 +1674,7 @@ a stated deliverable or measurement is still owed. **Open** = needs detail befor
 | MH-22 | Scarcity defended by systems; junk matters; lists work | 9.1-9.6, 11.6 | Met |
 | MH-23 | Factions with an argument, an economy, a home | 4.1-4.4 | Met (case, damaging fact, basis, three dissenters, home, questline each) |
 | MH-24 | Companions as embodied arguments | 6.8 | Partial: pathfinding and door-blocking rules owed |
-| MH-25 | Tone bible with one owner | 10 | **Open: owner must be a named person** |
+| MH-25 | Tone bible with one owner | 10 | Partial: owner named (project owner); the tone bible itself is owed |
 | MH-26 | Our own ironic engine, four channels | 2.4 | Met |
 | MH-27 | One visual rule; hero silhouette first | 11.1 | Partial: one-page look bible and sign typography sheet owed |
 | MH-28 | Regional palettes; saturated colour for meaning | 11.2 | Met; greyscale test owed |
@@ -1736,7 +1739,8 @@ a stated deliverable or measurement is still owed. **Open** = needs detail befor
 
 ## 16. Open questions for the next phase
 
-1. **Name the tone owner** (MH-25). Until a person is named, MH-25 fails.
+1. ~~Name the tone owner~~ (MH-25). **Resolved 10 Nov 2026:** the project owner sets tone. The tone bible is
+   still owed.
 2. **Still prototype:** is a 0.5 m layer grid with end-of-round flow readable to players who have never seen it? What
    is the minimum preview that makes it fair? (Month-4 test, 14.6.)
 3. **Composure tuning:** does +1 per aimed hit make aimed shots dominant over volume? Paper-test one burst-style and
