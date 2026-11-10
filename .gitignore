@@ -5,3 +5,4 @@ research/art/_local/
 *.flac
 .DS_Store
 Thumbs.db
+art-test/godot/.godot/

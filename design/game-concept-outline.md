@@ -1704,6 +1704,10 @@ with the labelled pre-finale save offered.
 sized to a fixed budget. The figures below are the v0.1 baseline and are no longer a constraint. Decisions in this
 document that were made mainly for cost (fixed camera, voice volume, five hubs, cut estuary) are open for review.
 
+**Owner's direction on assets, 10 Nov 2026:** every asset is made by our own agents. Nothing is bought or
+commissioned, so the "art outsourcing" line below no longer applies, and the animal families and hero characters
+are the known hard cases (see the research file above).
+
 **Assumed team:** seven full-time equivalents for 36 months (lead designer and writer, writer, quest and systems
 designer at half time, 1.5 programmers on an off-the-shelf engine, two artists, producer and QA lead), about 250
 person-months, plus about 45 person-months of contractors (composer and musicians 8, voice 6, external QA 18, art
@@ -1942,7 +1946,8 @@ a stated deliverable or measurement is still owed. **Open** = needs detail befor
     sessions.
 11. **Post-ending free play:** confirm cost by first playable or cut (CM-12).
 12. **Slide cost:** measure one painting and paragraph in the slice; the research has no figure.
-13. **Engine choice** against the 3D-with-cutaway requirement, 64-bit and modding needs; no custom engine.
+13. ~~Engine choice~~. **Resolved 10 Nov 2026: Godot 4.7.** Models are built outside the engine by agents scripting
+    Blender (`research/production/ai-agents-and-3d-assets.md`); the first art test is in `art-test/`.
 14. **The wider world:** the setting bible keeps it unknown. Confirm no plot thread or slide ever needs an answer,
     or decide one now (NDA-22 discipline).
 15. **The estuary and its trading faction** as the first expansion: decide only after launch stability is proven;
