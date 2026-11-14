@@ -1,9 +1,6 @@
 # Post-Apoc
 
-An original post-apocalyptic game, research complete, now in **concept design**.
-
-Phase 1 is a deep study of the Fallout series (1, 2, 3, 4, New Vegas, 76): lore, gameplay, balance, art,
-music, and critical reception. This is study, not imitation — the game we build will be its own world.
+Deep study of the Fallout series (1, 2, 3, 4, New Vegas, 76): lore, gameplay, balance, art, music, and critical reception.
 
 ## Layout
 
@@ -18,19 +15,4 @@ music, and critical reception. This is study, not imitation — the game we buil
 | `research/audio/` | Score, licensed music, radio, and sound design reference |
 | `research/design-insights/` | Developer talks, postmortems, cut content, design philosophy |
 | `research/community/` | Mods and community fixes — what players changed and why |
-| `research/production/` | How we build it: engines, AI agents and the 3D asset pipeline |
-| `design/` | Our own synthesis: must-haves, never-agains, and the game outline |
-
-## Status
-
-Research is complete (39 documents under `research/`) and the first synthesis pass is written:
-
-| Document | What it is |
-|---|---|
-| `design/post-mortem-matrix.md` | The acceptance checklist: must-haves (`MH-xx`), never-do-agains (`NDA-xx`) and contested questions (`CM-xx`), each with evidence from the research |
-| `design/game-concept-outline.md` | Design specification for our own game (working title *Above the Line*), v0.2, audited against the matrix |
-| `design/still-review.md` | Twelve-lens critique of the core mechanic (the still) and what it changed in v0.2 |
-
-Engine: Godot 4.7. All assets are made by our own agents. `art-test/` holds two look tests built entirely by code
-(a market scene; a rigged, walking hero character and animal). No game code yet; the outline's section 16 lists
-the open questions for the next phase.
+| `archive/` | Archived game design (`design/`), engine/3D pipeline research (`production/`), and Godot/Blender look tests (`art-test/`) |
